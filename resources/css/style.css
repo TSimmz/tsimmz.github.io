@@ -6,19 +6,27 @@ body {
 }
 
 .coming-soon {
+    position: relative;
+    top: 300px;
     width: 50%;
+    margin: auto auto;
     text-align: center;
+    padding: 10px;
     background-color: white;
+    box-shadow: 5px 10px #888888;
 }
 
-@media only screen and (max-width: 900px) {
-    h1, h2, p { 
-        font-size: 1em;
+
+@media only screen and (max-width: 960px) {
+    h1{
+        font-size: 1.5em;
     }
-}
-
-@media only screen and (max-width: 480px) {
-    h1, h2, p { 
-        font-size: 0.5em;
+    
+    h2 {
+        font-size: 1.125em;
+    }
+    
+    p { 
+        font-size: 0.75em;
     }
 }
