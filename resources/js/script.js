@@ -1,13 +1,10 @@
 // Adds a zero to numbers under 10
-function checkTime(t) 
-{
-  const num = t;
-  
-  if (num < 10) {
-    num = "0" + num;
+function checkTime(i) 
+{  
+  if (i < 10) {
+    i = "0" + i;
   }
-
-  return num;
+  return i;
 }
   
 // Runs the clock on the page

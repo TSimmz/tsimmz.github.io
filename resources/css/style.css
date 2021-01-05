@@ -22,6 +22,16 @@ p {
     box-shadow: 5px 10px #888888;
 }
 
+.heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+h1 {
+    
+}
+
 .black {
     margin: 0 auto;
     height: 55px;
@@ -45,6 +55,19 @@ p {
     font-size: 1.5em;
     color: rgb(0, 255, 0);
 
+}
+
+svg {
+    margin-top: 16px;
+    margin-right: 10px;
+    height: 2em;
+    width: 2em;
+}
+
+#logo {
+    fill: black;
+    stroke: black;
+    stroke-width: 1;
 }
 
 @media only screen and (max-width: 960px) {
