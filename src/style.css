@@ -1,8 +1,11 @@
 :root {
   --bg: #ffffff;
   --accent: #ee0000;
-  --light-text: #c7c7c7;
-  --dark-text:#494949;
+  --light-color: #c7c7c7;
+  --dark-color:#494949;
+  --navbar-font: 'Bitter', serif;
+  --hero-font: 'Open Sans', sans-serif; 
+  --body-font: 'Source Sans-Pro', sans-serif;
 }
 
 * {
@@ -14,4 +17,27 @@
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+}
+
+.navbar {
+  width: 100%;
+  height: 62px;
+  padding: 16px 30px;
+}
+
+ul {
+  list-style: none;
+}
+
+.logo {
+  width: 30px;
+  height: 30px;
+  background-color: var(--light-color);
+}
+
+.icon {
+  color: var (--light-color);
+  width: 24px;
+  height: 24px;
 }
