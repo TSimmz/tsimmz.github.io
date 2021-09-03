@@ -6,7 +6,11 @@ class NavItem extends React.Component {
   render() {
 
     return (
-        <li></li>
+        <li className='nav-item'>
+          <a className='button-color' href={this.props.href}>
+              {this.props.title}
+          </a>
+        </li>
     )
   };
 }

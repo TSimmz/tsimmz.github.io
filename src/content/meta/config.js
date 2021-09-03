@@ -23,18 +23,11 @@ module.exports = {
   manifestThemeColor: "#494949",
   manifestDisplay: "standalone",
 
-  // gravatar
-  // Use your Gravatar image. If empty then will use src/images/jpg/avatar.jpg
-  // Replace your email adress with md5-code.
-  // Example https://www.gravatar.com/avatar/g.strainovic@gmail.com ->
-  // gravatarImgMd5: "https://www.gravatar.com/avatar/1db853e4df386e8f699e4b35505dd8c6",
-  gravatarImgMd5: "",
-
   // social
-  authorSocialLinks: [
-    { name: "github", url: "https://github.com/tsimmz" },
-    { name: "twitter", url: "https://twitter.com/tylersimoni" },
-    { name: "instagram", url: "http://instagram.com/t_simmz" },
-    { name: "linkedin", url: "https://linkedin.com/in/tylersimoni"}
+  socialLinks: [
+    { github: 'https://github.com/tsimmz' },
+    { twitter: 'https://twitter.com/tylersimoni' },
+    { instagram: 'http://instagram.com/t_simmz' },
+    { linkedIn: 'https://linkedin.com/in/tylersimoni'}
   ]
 };

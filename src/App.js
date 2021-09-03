@@ -10,17 +10,22 @@ class App extends React.Component {
     return (
       <>
         <Navbar>
-          <NavItem title='Home' href='#home'/>
-          <NavItem title='Portfolio' href='#portfolio'/>
-          <NavItem title='About' href='#about'/>
-          <NavItem title='Contact' href='#contact'/>
+          <NavItem title='Home' href='#'/>
+          <NavItem title='Portfolio' href='#'/>
+          <NavItem title='About' href='#'/>
+          <NavItem title='Contact' href='#'/>
         </Navbar> 
         <main>
           <section id="home">
-            <h1> Tyler Simoni</h1>
-            <hr/>
-            <p>I'm a frontend developer and designer based in the Tampa Bay.</p>
-            <button>Know more</button>
+            <div style={{height: '50vh'}}>
+              <h1 className='hero-text'>Tyler Simoni</h1>
+              <div className='hero-accent'></div>
+              <h2 className='headline'>I'm a frontend developer and designer based in the Tampa Bay.</h2>
+              <h2 className='headline progress'>{'[ Design in progress ]'}</h2>
+              <button>
+                <a href='https://linkedin.com/in/tylersimoni' target='_blank' rel='noreferrer'>Know more</a>
+              </button>
+            </div>
           </section>
         </main>
         <Footer/>
