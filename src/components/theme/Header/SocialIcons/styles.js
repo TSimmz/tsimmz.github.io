@@ -8,10 +8,16 @@ export const Wrapper = styled.div`
     margin: 0 0.5rem;
     width: 24px;
     height: 24px;
+    transition: filter 400ms;
 
     svg {
-      fill: #c7c7c7;
       margin: 0;
+      fill: #c7c7c7;
+      transition: fill 500ms;
+
+      &:hover {
+        fill: #494949;
+      }
     }
   }
 `;
