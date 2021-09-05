@@ -98,6 +98,7 @@ a {
   max-width: 1200px;
   margin: 0 auto;
   height: calc(100vh - var(--nav-size));
+  padding: 0 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
