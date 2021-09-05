@@ -96,6 +96,7 @@ a {
 #about,
 #contact {
   max-width: 1200px;
+  margin: 0 auto;
   height: calc(100vh - var(--nav-size));
   display: flex;
   flex-direction: column;
