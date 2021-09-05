@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  a {
-    color: #000;
+  > a {
+    color: #c7c7c7;
     text-decoration: none;
 
-		@media (max-width: 960px) {
-			color: ${({ theme }) => (theme === 'light' ? '#000' : '#fff')};
-		}
+    @media (max-width: 960px) {
+      color: ${({ theme }) => (theme === 'light' ? '#000' : '#fff')};
+    }
   }
 
   ${({ desktop }) =>
@@ -15,13 +15,15 @@ export const Wrapper = styled.div`
       ? `
 			align-items: center;
 			display: flex;
+			font-family: 'Bitter', serif;
+			font-size: 1.2em;
 
 			@media (max-width: 960px) {
 					display: none;
 			}
 
-			a {
-					margin-right: 1rem;
+			> a {
+					margin: 0 2em;
 
 					&:last-child {
 							margin-right: unset;
@@ -33,7 +35,7 @@ export const Wrapper = styled.div`
 			display: flex;
 			flex-direction: column;
 
-			a {
+			> a {
 					margin-bottom: 1rem;
 
 					&:last-child {
