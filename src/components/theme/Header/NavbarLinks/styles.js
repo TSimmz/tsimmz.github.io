@@ -3,10 +3,15 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   > a {
     color: #c7c7c7;
+    transition: color 500ms;
     text-decoration: none;
 
     @media (max-width: 960px) {
       color: ${({ theme }) => (theme === 'light' ? '#000' : '#fff')};
+    }
+
+    &:hover {
+      color: #494949;
     }
   }
 
@@ -23,11 +28,12 @@ export const Wrapper = styled.div`
 			}
 
 			> a {
-					margin: 0 2em;
+				margin: 0 2em;
 
-					&:last-child {
-							margin-right: unset;
-					}
+				
+				&:last-child {
+						margin-right: unset;
+				}
 			}
 		`
       : `
