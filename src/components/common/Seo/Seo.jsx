@@ -11,6 +11,7 @@ import {
   legalName,
   foundingDate,
   logo,
+  siteLanguage,
 } from 'data/config';
 
 export const Seo = ({
@@ -73,7 +74,7 @@ export const Seo = ({
       <script type='application/ld+json'>{structuredDataOrganization}</script>
       <link rel='publisher' href={socialLinks.google} />
       <title>{title}</title>
-      <html lang='en' dir='ltr' />
+      <html lang={siteLanguage} dir='ltr' />
     </Helmet>
   );
 };
