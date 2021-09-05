@@ -1,15 +1,15 @@
 import React from 'react';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
+import { Link } from 'react-router-dom';
 import SocialIcons from '../SocialIcons/SocialIcons';
 import { Wrapper } from './styles';
 
 const NavbarLinks = ({ desktop }) => {
   return (
     <Wrapper desktop={desktop}>
-      <AnchorLink href=''>Home</AnchorLink>
-      <AnchorLink href='#about'>About</AnchorLink>
-      <AnchorLink href='#portfolio'>Portfolio</AnchorLink>
-      <AnchorLink href='#contact'>Contact</AnchorLink>
+      <Link to='/'>Home</Link>
+      <Link to='/portfolio'>Portfolio</Link>
+      <Link to='/about'>About</Link>
+      <Link to='/contact'>Contact</Link>
       <SocialIcons />
     </Wrapper>
   );

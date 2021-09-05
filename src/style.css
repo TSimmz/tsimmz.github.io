@@ -9,7 +9,7 @@
   --bg: #ffffff;
   --accent: #ee0000;
   --light-color: #c7c7c7;
-  --dark-color:#494949;
+  --dark-color: #494949;
 
   --navbar-font: 'Bitter', serif;
   --hero-font: 'Open Sans', sans-serif;
@@ -29,7 +29,6 @@
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
 }
 
 .navbar {
@@ -58,7 +57,7 @@ a {
   align-items: center;
   font-family: var(--navbar-font);
   font-size: 24px;
-  margin: 0px 40px; 
+  margin: 0px 40px;
 }
 
 .icon-button {
@@ -78,12 +77,12 @@ a {
   transition: filter 400ms;
 }
 
-.button-color:hover{
+.button-color:hover {
   filter: brightness(0.7);
 }
 
 .nav-logo svg {
-  color : var(--light-color);
+  color: var(--light-color);
   width: 30px;
   height: 30px;
 }
@@ -92,11 +91,14 @@ a {
   color: var(--dark-color);
 }
 
-#home {
+#home,
+#portfolio,
+#about,
+#contact {
   max-width: 1200px;
-  height: calc( 100vh - var(--nav-size));
+  height: calc(100vh - var(--nav-size));
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
   justify-content: center;
 }
 
@@ -106,7 +108,7 @@ a {
   letter-spacing: 20px;
   color: var(--dark-color);
   margin: 28px 28px 28px 0px;
-} 
+}
 
 .hero-accent {
   width: 100%;
@@ -139,14 +141,14 @@ button {
   font-family: var(--body-font);
   font-weight: bold;
   background-color: white;
-  filter: drop-shadow(0px 4px 4px #AFAFAF)
+  filter: drop-shadow(0px 4px 4px #afafaf);
 }
 
 .progress {
   color: var(--accent);
 }
 
-button a{
+button a {
   text-decoration: none;
   color: var(--dark-color);
 }
