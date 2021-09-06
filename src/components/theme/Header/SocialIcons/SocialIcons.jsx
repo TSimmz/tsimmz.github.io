@@ -1,5 +1,5 @@
-import React from 'react';
-//import { ThemeContext } from 'styled-components';
+import React, { useContext } from 'react';
+import { ThemeContext } from 'providers/ThemeProvider';
 import { Wrapper } from './styles';
 import social from './social.json';
 
@@ -9,7 +9,7 @@ import { ReactComponent as InstagramIcon } from 'assets/icons/Instagram.svg';
 import { ReactComponent as TwitterIcon } from 'assets/icons/Twitter.svg';
 
 const SocialIcons = () => {
-  //const { theme } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
 
   const renderIcon = (name) => {
     switch (name) {
@@ -27,7 +27,7 @@ const SocialIcons = () => {
   };
 
   return (
-    <Wrapper>
+    <Wrapper theme={theme}>
       {social.map(({ id, name, link, icon }) => (
         <a
           key={id}

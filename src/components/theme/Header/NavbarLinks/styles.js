@@ -1,19 +1,24 @@
 import styled from 'styled-components';
+import { lightTheme, darkTheme } from 'providers/ThemeProvider';
 
 export const Wrapper = styled.div`
   width: 100%;
 
   > a {
-    color: #c7c7c7;
-    transition: color 500ms;
+    color: ${({ theme }) =>
+      theme === 'light' ? lightTheme.lightColor : darkTheme.lightColor};
+    transition: 500ms;
     text-decoration: none;
 
     @media (max-width: 960px) {
-      color: ${({ theme }) => (theme === 'light' ? '#000' : '#fff')};
+      color: ${({ theme }) =>
+        theme === 'light' ? lightTheme.lightColor : darkTheme.lightColor};
     }
 
     &:hover {
-      color: #494949;
+      color: ${({ theme }) =>
+        theme === 'light' ? lightTheme.darkColor : darkTheme.hover};
+      transform: scale(1.1);
     }
   }
 

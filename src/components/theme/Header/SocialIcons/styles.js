@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { lightTheme, darkTheme } from 'providers/ThemeProvider';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -13,11 +14,14 @@ export const Wrapper = styled.div`
 
     svg {
       margin: 0;
-      fill: #c7c7c7;
-      transition: fill 500ms;
+      fill: ${({ theme }) =>
+        theme === 'light' ? lightTheme.lightColor : darkTheme.lightColor};
+      transition: 500ms;
 
       &:hover {
-        fill: #494949;
+        fill: ${({ theme }) =>
+          theme === 'light' ? lightTheme.hover : darkTheme.hover};
+        transform: scale(1.1);
       }
     }
   }

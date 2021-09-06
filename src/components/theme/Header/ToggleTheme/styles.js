@@ -28,6 +28,7 @@ export const Wrapper = styled.button`
     &:hover {
       stroke: ${({ theme }) =>
         theme === 'light' ? lightTheme.hover : darkTheme.hover};
+      transform: scale(1.1);
     }
   }
 `;
