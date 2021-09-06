@@ -10,7 +10,7 @@ export const Portfolio = () => {
           I'm a frontend developer and designer based in the Tampa Bay area.
         </h2>
         <h2 className='headline progress'>{'[ Design in progress ]'}</h2>
-        <button>
+        <button className='know-more'>
           <a
             href='https://linkedin.com/in/tylersimoni'
             target='_blank'

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { lightTheme, darkTheme } from 'providers/ThemeProvider';
 
 export const Wrapper = styled.button`
   background: none;
@@ -17,7 +18,16 @@ export const Wrapper = styled.button`
     text-align: left;
   }
 
-  img {
+  svg {
     margin-bottom: unset;
+    fill: none;
+    stroke: ${({ theme }) =>
+      theme === 'light' ? lightTheme.lightColor : darkTheme.lightColor};
+    transition: 500ms;
+
+    &:hover {
+      stroke: ${({ theme }) =>
+        theme === 'light' ? lightTheme.hover : darkTheme.hover};
+    }
   }
 `;

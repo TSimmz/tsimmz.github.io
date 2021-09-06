@@ -1,8 +1,12 @@
-import styled from "styled-components";
+import styled from 'styled-components';
+import { lightTheme, darkTheme } from 'providers/ThemeProvider';
 
 export const Wrapper = styled.div`
   background: transparent;
   width: 100%;
+  background-color: ${({ theme }) =>
+    theme === 'light' ? lightTheme.navbarColor : darkTheme.navbarColor};
+  transition: 500ms;
 `;
 
 export const Overlay = styled.div`

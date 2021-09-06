@@ -6,12 +6,3 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: flex-end;
 `;
-
-export const Brand = styled.a`
-  color: #fff';
-
-  @media (max-width: 960px) {
-    mix-blend-mode: ${({ theme }) =>
-      theme === 'light' ? 'unset' : 'difference'};
-  }
-`;

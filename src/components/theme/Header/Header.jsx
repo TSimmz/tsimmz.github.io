@@ -1,14 +1,16 @@
-import React, { useState } from "react";
-import Navbar from "./Navbar/Navbar";
-import Hamburger from "./Hamburger/Hamburger";
-import Sidebar from "./Sidebar/Sidebar";
-import { Wrapper, Overlay } from "./styles";
+import React, { useContext, useState } from 'react';
+import Navbar from './Navbar/Navbar';
+import Hamburger from './Hamburger/Hamburger';
+import Sidebar from './Sidebar/Sidebar';
+import { Wrapper, Overlay } from './styles';
+import { ThemeContext } from 'providers/ThemeProvider';
 
 export const Header = () => {
   const [sidebar, toggle] = useState(false);
+  const { theme } = useContext(ThemeContext);
 
   return (
-    <Wrapper>
+    <Wrapper theme={theme}>
       <Overlay sidebar={sidebar} onClick={() => toggle(!sidebar)} />
       <Navbar />
       <Hamburger sidebar={sidebar} toggle={toggle} />
