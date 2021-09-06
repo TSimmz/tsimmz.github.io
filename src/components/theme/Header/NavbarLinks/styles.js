@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
+  width: 100%;
+
   > a {
     color: #c7c7c7;
     transition: color 500ms;
@@ -22,6 +24,11 @@ export const Wrapper = styled.div`
 			display: flex;
 			font-family: 'Bitter', serif;
 			font-size: 1.2em;
+
+			
+			> button {
+				margin-right: auto;
+			}
 
 			@media (max-width: 960px) {
 					display: none;
