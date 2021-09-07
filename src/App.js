@@ -1,4 +1,3 @@
-import './style.css';
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Layout, Seo } from './components/common';
@@ -6,21 +5,31 @@ import { Header } from 'components/theme';
 import { Home, Portfolio, About, Contact } from 'components/landing';
 import ThemeProvider from 'providers/ThemeProvider';
 
+const timeout = 1000;
+
 export const App = () => {
   return (
-    <Layout>
-      <Seo />
-      <ThemeProvider>
+    <ThemeProvider>
+      <Layout>
+        <Seo />
         <Router>
           <Header />
           <Switch>
-            <Route exact path='/' component={Home} />
-            <Route path='/portfolio' component={Portfolio} />
-            <Route path='/about' component={About} />
-            <Route path='/contact' component={Contact} />
+            <Route exact path='/'>
+              <Home timeout={timeout} />
+            </Route>
+            <Route path='/about'>
+              <About timeout={timeout} />
+            </Route>
+            <Route path='/portfolio'>
+              <Portfolio timeout={timeout} />
+            </Route>
+            <Route path='/contact'>
+              <Contact timeout={timeout} />
+            </Route>
           </Switch>
         </Router>
-      </ThemeProvider>
-    </Layout>
+      </Layout>
+    </ThemeProvider>
   );
 };

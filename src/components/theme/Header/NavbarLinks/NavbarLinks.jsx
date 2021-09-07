@@ -11,8 +11,8 @@ const NavbarLinks = ({ desktop }) => {
     <Wrapper theme={theme} desktop={desktop}>
       <ToggleTheme />
       <Link to='/'>Home</Link>
-      <Link to='/portfolio'>Portfolio</Link>
       <Link to='/about'>About</Link>
+      <Link to='/portfolio'>Portfolio</Link>
       <Link to='/contact'>Contact</Link>
       <SocialIcons />
     </Wrapper>

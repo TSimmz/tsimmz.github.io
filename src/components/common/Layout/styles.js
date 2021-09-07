@@ -1,4 +1,5 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
+import { lightTheme, darkTheme } from 'providers/ThemeProvider';
 
 export const Global = createGlobalStyle`
   html {
@@ -296,6 +297,9 @@ export const Global = createGlobalStyle`
       text-rendering: optimizeLegibility;
       font-size: 0.78405rem;
       line-height: 1.1;
+    }
+    h1,h2,h3,h4,h5,h6{
+      font-family: 'Open Sans', Helvetica, sans-serif;
     }
     hgroup {
       margin-left: 0;
@@ -603,12 +607,16 @@ export const Global = createGlobalStyle`
       margin: 0;
       padding: 0;
       font-family: 'Source Sans Pro', Helvetica, sans-serif;
-      color: #494949;
-      background-color: #fff;
+      color: ${({ theme }) =>
+        theme === 'light' ? lightTheme.lightColor : darkTheme.lightColor};
+      background-color: ${({ theme }) =>
+        theme === 'light' ? lightTheme.background : darkTheme.background};
       transition: .3s all;
       font-weight: normal;
       word-wrap: break-word;
       font-kerning: normal;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
       -moz-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
       -ms-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
       -webkit-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
