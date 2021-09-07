@@ -1,37 +1,36 @@
-import './style.css';
 import React from 'react';
-import Navbar from './components/Navbar/Navbar';
-import NavItem from './components/NavItem/NavItem';
-import Footer from './components/Footer/Footer';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Layout, Seo } from './components/common';
+import { Header } from 'components/theme';
+import { Home, Portfolio, About, Contact } from 'components/landing';
+import ThemeProvider from 'providers/ThemeProvider';
+import Fade from '@material-ui/core/Fade';
 
-class App extends React.Component {
+const timeout = 1000;
 
-  render() {
-    return (
-      <>
-        <Navbar>
-          <NavItem title='Home' href='#'/>
-          <NavItem title='Portfolio' href='#'/>
-          <NavItem title='About' href='#'/>
-          <NavItem title='Contact' href='#'/>
-        </Navbar> 
-        <main>
-          <section id="home">
-            <div style={{height: '50vh'}}>
-              <h1 className='hero-text'>Tyler Simoni</h1>
-              <div className='hero-accent'></div>
-              <h2 className='headline'>I'm a frontend developer and designer based in the Tampa Bay.</h2>
-              <h2 className='headline progress'>{'[ Design in progress ]'}</h2>
-              <button>
-                <a href='https://linkedin.com/in/tylersimoni' target='_blank' rel='noreferrer'>Know more</a>
-              </button>
-            </div>
-          </section>
-        </main>
-        <Footer/>
-      </>
-    );
-  }
-}
-
-export default App;
+export const App = () => {
+  return (
+    <ThemeProvider>
+      <Layout>
+        <Seo />
+        <Router>
+          <Header timeout={timeout} />
+          <Switch>
+            <Route exact path='/'>
+              <Home timeout={timeout} />
+            </Route>
+            <Route path='/about'>
+              <About timeout={timeout} />
+            </Route>
+            <Route path='/portfolio'>
+              <Portfolio timeout={timeout} />
+            </Route>
+            <Route path='/contact'>
+              <Contact timeout={timeout} />
+            </Route>
+          </Switch>
+        </Router>
+      </Layout>
+    </ThemeProvider>
+  );
+};
