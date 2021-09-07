@@ -5,14 +5,14 @@ import Sidebar from './Sidebar/Sidebar';
 import { Wrapper, Overlay } from './styles';
 import { ThemeContext } from 'providers/ThemeProvider';
 
-export const Header = () => {
+export const Header = ({ timeout }) => {
   const [sidebar, toggle] = useState(false);
   const { theme } = useContext(ThemeContext);
 
   return (
     <Wrapper theme={theme}>
       <Overlay sidebar={sidebar} onClick={() => toggle(!sidebar)} />
-      <Navbar />
+      <Navbar timeout={timeout} />
       <Hamburger sidebar={sidebar} toggle={toggle} />
       <Sidebar sidebar={sidebar} toggle={toggle} />
     </Wrapper>

@@ -3,14 +3,13 @@ import { ThemeContext } from 'providers/ThemeProvider';
 import { Wrapper, HeroWrapper, Divider, CTA } from './styles';
 import { Button } from 'components/common';
 import { Link } from 'react-router-dom';
-import Slide from '@material-ui/core/Slide';
+import { Fade } from '@material-ui/core/';
 
 export const Home = ({ timeout }) => {
   const { theme } = useContext(ThemeContext);
   return (
-    <Slide
-      direction='left'
-      timeout={timeout}
+    <Fade
+      timeout={{ enter: timeout, exit: timeout }}
       in={true}
       mountOnEnter
       unmountOnExit>
@@ -27,6 +26,6 @@ export const Home = ({ timeout }) => {
           </Button>
         </HeroWrapper>
       </Wrapper>
-    </Slide>
+    </Fade>
   );
 };

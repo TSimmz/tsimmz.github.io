@@ -4,6 +4,7 @@ import { Layout, Seo } from './components/common';
 import { Header } from 'components/theme';
 import { Home, Portfolio, About, Contact } from 'components/landing';
 import ThemeProvider from 'providers/ThemeProvider';
+import Fade from '@material-ui/core/Fade';
 
 const timeout = 1000;
 
@@ -13,7 +14,7 @@ export const App = () => {
       <Layout>
         <Seo />
         <Router>
-          <Header />
+          <Header timeout={timeout} />
           <Switch>
             <Route exact path='/'>
               <Home timeout={timeout} />

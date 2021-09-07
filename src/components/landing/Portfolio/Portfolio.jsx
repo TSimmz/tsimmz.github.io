@@ -1,14 +1,13 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from 'providers/ThemeProvider';
 import { Wrapper, PortfolioWrapper, Divider } from './styles';
-import Slide from '@material-ui/core/Slide';
+import { Fade } from '@material-ui/core';
 
 export const Portfolio = ({ timeout }) => {
   const { theme } = useContext(ThemeContext);
   return (
-    <Slide
-      direction='left'
-      timeout={timeout}
+    <Fade
+      timeout={{ enter: timeout, exit: timeout }}
       in={true}
       mountOnEnter
       unmountOnExit>
@@ -19,6 +18,6 @@ export const Portfolio = ({ timeout }) => {
           <h4 className='inProgress'>{'[ Design in progress ]'}</h4>
         </PortfolioWrapper>
       </Wrapper>
-    </Slide>
+    </Fade>
   );
 };
