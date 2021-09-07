@@ -1,24 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ThemeContext } from 'providers/ThemeProvider';
+import { Wrapper, PortfolioWrapper, Divider } from './styles';
+import Slide from '@material-ui/core/Slide';
 
-export const Portfolio = () => {
+export const Portfolio = ({ timeout }) => {
+  const { theme } = useContext(ThemeContext);
   return (
-    <section id='portfolio'>
-      <div style={{ height: '50vh' }}>
-        <h1 className='hero-text'>Portfolio</h1>
-        <div className='hero-accent'></div>
-        <h2 className='headline'>
-          I'm a frontend developer and designer based in the Tampa Bay area.
-        </h2>
-        <h2 className='headline progress'>{'[ Design in progress ]'}</h2>
-        <button className='know-more'>
-          <a
-            href='https://linkedin.com/in/tylersimoni'
-            target='_blank'
-            rel='noreferrer'>
-            Know more
-          </a>
-        </button>
-      </div>
-    </section>
+    <Slide
+      direction='left'
+      timeout={timeout}
+      in={true}
+      mountOnEnter
+      unmountOnExit>
+      <Wrapper theme={theme}>
+        <PortfolioWrapper id='portfolio' theme={theme}>
+          <h1>Portfolio</h1>
+          <Divider theme={theme} />
+          <h4 className='inProgress'>{'[ Design in progress ]'}</h4>
+        </PortfolioWrapper>
+      </Wrapper>
+    </Slide>
   );
 };
