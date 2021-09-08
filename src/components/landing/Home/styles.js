@@ -34,11 +34,13 @@ export const HeroWrapper = styled.section`
     margin-top: 28px;
     color: ${({ theme }) =>
       theme === 'light' ? lightTheme.darkColor : darkTheme.darkColor};
+    transition: 500ms;
   }
 
   .inProgress {
     color: ${({ theme }) =>
       theme === 'light' ? lightTheme.accent : darkTheme.accent};
+    transition: 500ms;
   }
 
 `;
@@ -48,6 +50,7 @@ export const Divider = styled.div`
   border: 3px solid
     ${({ theme }) => (theme === 'light' ? lightTheme.accent : darkTheme.accent)};
   border-radius: 5px;
+  transition: 500ms;
 `;
 
 export const CTA = styled.button`
@@ -63,7 +66,7 @@ export const CTA = styled.button`
     transform: translateY(20%);
     color: ${({ theme }) =>
       theme === 'light' ? lightTheme.darkColor : darkTheme.lightColor};
-
+    transition: 500ms;
     &:hover {
       color: #fff;
     }
