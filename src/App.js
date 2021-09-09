@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Layout, Seo } from './components/common';
 import { Header } from 'components/theme';
-import { Home, Portfolio, About, Contact } from 'components/landing';
+import { Home, About, Resume, Portfolio, Contact } from 'components/landing';
 import ThemeProvider from 'providers/ThemeProvider';
 
 const timeout = 1000;
@@ -20,6 +20,9 @@ export const App = () => {
             </Route>
             <Route path='/about'>
               <About timeout={timeout} />
+            </Route>
+            <Route path='/resume'>
+              <Resume timeout={timeout} />
             </Route>
             <Route path='/portfolio'>
               <Portfolio timeout={timeout} />
