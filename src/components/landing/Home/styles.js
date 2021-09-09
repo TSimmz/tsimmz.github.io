@@ -10,21 +10,35 @@ export const Wrapper = styled.div`
 `;
 
 export const HeroWrapper = styled.section`
-  max-width: 1200px;
+  max-width: 50vw;
   margin: 0 auto;
   padding: 0 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 
   h1 {
     font-size: 144px;
     letter-spacing: 1.5rem;
     margin:bottom: 2rem;
+    width: 50vw;
 
     color: ${({ theme }) =>
       theme === 'light' ? lightTheme.darkColor : darkTheme.darkColor};
     transition: 500ms;
+
+    @media (max-width: 2360px) {
+      font-size: 124px;
+      letter-spacing: 1.3rem;
+    }
+
+    @media (max-width: 2035px) {
+      font-size: 104px;
+      letter-spacing: 1.1rem;
+    } 
+
+    @media (max-width: 1710) {
+      
+    } 
   }
 
   h4 {
@@ -34,13 +48,8 @@ export const HeroWrapper = styled.section`
     margin-top: 28px;
     color: ${({ theme }) =>
       theme === 'light' ? lightTheme.darkColor : darkTheme.darkColor};
+    transition: 500ms;
   }
-
-  .inProgress {
-    color: ${({ theme }) =>
-      theme === 'light' ? lightTheme.accent : darkTheme.accent};
-  }
-
 `;
 
 export const Divider = styled.div`
@@ -48,6 +57,7 @@ export const Divider = styled.div`
   border: 3px solid
     ${({ theme }) => (theme === 'light' ? lightTheme.accent : darkTheme.accent)};
   border-radius: 5px;
+  transition: 500ms;
 `;
 
 export const CTA = styled.button`
@@ -63,7 +73,7 @@ export const CTA = styled.button`
     transform: translateY(20%);
     color: ${({ theme }) =>
       theme === 'light' ? lightTheme.darkColor : darkTheme.lightColor};
-
+    transition: 500ms;
     &:hover {
       color: #fff;
     }

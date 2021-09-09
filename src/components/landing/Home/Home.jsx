@@ -20,7 +20,6 @@ export const Home = ({ timeout }) => {
           <h4>
             I'm a frontend developer and designer based in the Tampa Bay area.
           </h4>
-          <h4 className='inProgress'>{'[ Design in progress ]'}</h4>
           <Button as={CTA} theme={theme}>
             <Link to='/about'>Know more</Link>
           </Button>
