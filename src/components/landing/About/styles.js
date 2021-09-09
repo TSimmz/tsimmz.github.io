@@ -10,11 +10,11 @@ export const Wrapper = styled.div`
 `;
 
 export const AboutWrapper = styled.section`
-  max-width: 1200px;
+  max-width: 1920px;
+  height: 55vh;
   margin: 0 auto;
   padding: 0 20px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
 
   h1 {
@@ -41,11 +41,29 @@ export const AboutWrapper = styled.section`
       theme === 'light' ? lightTheme.accent : darkTheme.accent};
   }
 
+
+  p {
+    font-size: 24px;
+    font-weight: normal;
+    color: ${({ theme }) =>
+      theme === 'light' ? lightTheme.darkColor : darkTheme.darkColor};
+    transition: 500ms;
+  }
+`;
+
+export const CarouselWrapper = styled.div`
+  max-width: 650px;
+  transform: translateX(125px);
+`;
+
+export const Details = styled.div`
+  max-width: 660px;
 `;
 
 export const Divider = styled.div`
-  width: 100%;
+  margin: 0 50px;
   border: 3px solid
     ${({ theme }) => (theme === 'light' ? lightTheme.accent : darkTheme.accent)};
   border-radius: 5px;
+  transition: 500ms;
 `;
