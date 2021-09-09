@@ -4,11 +4,11 @@ import {
   Wrapper,
   AboutWrapper,
   Divider,
-  CarouselWrapper,
   Details,
+  ImageWrapper,
 } from './styles';
+import nyc from 'assets/images/nyc.jpg';
 import { Fade } from '@material-ui/core';
-import Carousel from './Carousel/Carousel';
 
 export const About = ({ timeout }) => {
   const { theme } = useContext(ThemeContext);
@@ -20,9 +20,9 @@ export const About = ({ timeout }) => {
       unmountOnExit>
       <Wrapper theme={theme}>
         <AboutWrapper id='about' theme={theme}>
-          <CarouselWrapper>
-            <Carousel />
-          </CarouselWrapper>
+          <ImageWrapper theme={theme}>
+            <img src={nyc} alt='times square' />
+          </ImageWrapper>
           <Divider theme={theme} />
           <Details>
             <h1>About</h1>
@@ -36,8 +36,8 @@ export const About = ({ timeout }) => {
               my free time programming small robotics and microcontrollers.
             </p>
             <p>
-              I started my professional career as an Integration Engineer,
-              before moving to program Avionics systems for CAE USA Tampa.
+              I started my professional career at CAE USA Tampa as an
+              Integration Engineer, before moving to program Avionics systems.
             </p>
             <p>
               During the Covid lockdown of 2020, I wanted a new challenge and so
@@ -56,3 +56,7 @@ export const About = ({ timeout }) => {
     </Fade>
   );
 };
+
+// <CarouselWrapper>
+//             <Carousel />
+//           </CarouselWrapper>
