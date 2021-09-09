@@ -5,14 +5,13 @@ import { lightTheme, darkTheme } from 'providers/ThemeProvider';
 export const Wrapper = styled.div`
   width: 100%;
   height: 90vh;
-  margin: 40px 0px;
+  margin: 20px 0px;
   display: flex;
   align-items: center;
-  overflow: hidden;
 
   @media (max-width: 1310px) {
     height: 80vh;
-    margin: 80px 0px;
+    margin: 50px 0px;
   }
 `;
 
@@ -32,7 +31,7 @@ export const AboutWrapper = styled.section`
   h1 {
     font-size: 144px;
     letter-spacing: 1.5rem;
-    margin:bottom: 2rem;
+    margin-bottom: 0.5rem;
 
     color: ${({ theme }) =>
       theme === 'light' ? lightTheme.darkColor : darkTheme.darkColor};
