@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { ThemeContext } from 'providers/ThemeProvider';
+import { ThemeContext } from '../../../providers/ThemeProvider';
 import {
   Wrapper,
   AboutWrapper,
@@ -7,7 +7,7 @@ import {
   Details,
   ImageWrapper,
 } from './styles';
-import nyc from 'assets/images/nyc.jpg';
+import nyc from '../../../assets/images/nyc.jpg';
 import { Fade } from '@material-ui/core';
 
 export const About = ({ timeout }) => {

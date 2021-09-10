@@ -3,7 +3,7 @@ import Navbar from './Navbar/Navbar';
 import Hamburger from './Hamburger/Hamburger';
 import Sidebar from './Sidebar/Sidebar';
 import { Wrapper, Overlay } from './styles';
-import { ThemeContext } from 'providers/ThemeProvider';
+import { ThemeContext } from '../../../providers/ThemeProvider';
 
 export const Header = ({ timeout }) => {
   const [sidebar, toggle] = useState(false);

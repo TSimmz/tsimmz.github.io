@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import useMedia from 'hooks/useMedia';
+import useMedia from './useMedia';
 
 const useDarkMode = () => {
   const [themeMode, setThemeMode] = useState('light');

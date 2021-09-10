@@ -7,7 +7,7 @@ import nyc from 'assets/images/nyc.jpg';
 import hiking from 'assets/images/hiking.jpg';
 import drone from 'assets/images/drone.jpg';
 import family from 'assets/images/family.jpg';
-import { ThemeContext } from 'providers/ThemeProvider';
+import { ThemeContext } from '../../../providers/ThemeProvider';
 
 const Carousel = () => {
   const { theme } = useContext(ThemeContext);

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
-import { ThemeContext } from 'providers/ThemeProvider';
+import { Link } from 'gatsby';
+import { ThemeContext } from '../../../../providers/ThemeProvider';
 import SocialIcons from '../SocialIcons/SocialIcons';
 import ToggleTheme from '../ToggleTheme/ToggleTheme';
 import { Wrapper } from './styles';

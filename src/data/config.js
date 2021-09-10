@@ -20,7 +20,7 @@ module.exports = {
     instagram: 'http://instagram.com/t_simmz',
   },
 
-  googleAnalyticsID: '',
+  googleAnalyticsID: 'G-HQ1KE375HS',
 
   themeColor: '#494949',
   backgroundColor: '#ffffff',

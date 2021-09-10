@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import { ThemeContext } from 'providers/ThemeProvider';
+import { ThemeContext } from '../../../providers/ThemeProvider';
 import { Wrapper, HeroWrapper, Divider, CTA } from './styles';
-import { Button } from 'components/common';
+import { Button } from '../../../components/common';
 import { Link } from 'react-router-dom';
 import { Fade } from '@material-ui/core/';
 

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { ThemeContext } from 'providers/ThemeProvider';
+import { ThemeContext } from '../../../providers/ThemeProvider';
 import { Wrapper, ContactWrapper, Divider } from './styles';
 import { Fade } from '@material-ui/core';
 

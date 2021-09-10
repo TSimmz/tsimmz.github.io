@@ -1,4 +1,4 @@
-import config from './src/data/config';
+const config = require('./src/data/config');
 
 require('dotenv').config({
   path: `.env`,
@@ -19,18 +19,7 @@ module.exports = {
         siteUrl: config.url,
       },
     },
-    {
-      resolve: 'gatsby-source-graphql',
-      options: {
-        typeName: 'GitHub',
-        fieldName: 'github',
-        url: 'https://api.github.com/graphql',
-        headers: {
-          Authorization: `bearer ${process.env.PORTFOLIO_GITHUB_TOKEN}`,
-        },
-        fetchOptions: {},
-      },
-    },
+
     {
       resolve: 'gatsby-plugin-nprogress',
       options: {
@@ -54,9 +43,22 @@ module.exports = {
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
         display: 'minimal-ui',
-        icon: './static/favicon/favicon-512.png',
+        icon: './public/logo512.png',
       },
     },
     'gatsby-plugin-offline',
   ],
 };
+
+// {
+//   resolve: 'gatsby-source-graphql',
+//   options: {
+//     typeName: 'GitHub',
+//     fieldName: 'github',
+//     url: 'https://api.github.com/graphql',
+//     headers: {
+//       Authorization: `bearer ${process.env.PORTFOLIO_GITHUB_TOKEN}`,
+//     },
+//     fetchOptions: {},
+//   },
+// },

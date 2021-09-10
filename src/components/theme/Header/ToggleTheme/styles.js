@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { lightTheme, darkTheme } from 'providers/ThemeProvider';
+import { lightTheme, darkTheme } from '../../../../providers/ThemeProvider';
 
 export const Wrapper = styled.button`
   background: none;

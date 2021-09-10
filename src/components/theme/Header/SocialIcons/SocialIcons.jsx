@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
-import { ThemeContext } from 'providers/ThemeProvider';
+import { ThemeContext } from '../../../../providers/ThemeProvider';
 import { Wrapper } from './styles';
 import social from './social.json';
 
-import { ReactComponent as GithubIcon } from 'assets/icons/Github.svg';
-import { ReactComponent as LinkedinIcon } from 'assets/icons/Linkedin.svg';
-import { ReactComponent as InstagramIcon } from 'assets/icons/Instagram.svg';
-import { ReactComponent as TwitterIcon } from 'assets/icons/Twitter.svg';
+import { ReactComponent as GithubIcon } from '../../../../assets/icons/Github.svg';
+import { ReactComponent as LinkedinIcon } from '../../../../assets/icons/Linkedin.svg';
+import { ReactComponent as InstagramIcon } from '../../../../assets/icons/Instagram.svg';
+import { ReactComponent as TwitterIcon } from '../../../../assets/icons/Twitter.svg';
 
 const SocialIcons = () => {
   const { theme } = useContext(ThemeContext);
