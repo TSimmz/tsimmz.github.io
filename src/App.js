@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { Layout, Seo } from './components/common';
+import { Layout, Seo } from 'components/common';
 import { Header } from 'components/theme';
 import { Home, About, Resume, Portfolio, Contact } from 'components/landing';
 import ThemeProvider from 'providers/ThemeProvider';
