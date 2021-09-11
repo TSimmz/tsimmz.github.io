@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/static/css/main.afc6d6e2.chunk.css",
-    "main.js": "/static/js/main.7e6ea091.chunk.js",
-    "main.js.map": "/static/js/main.7e6ea091.chunk.js.map",
+    "main.css": "/static/css/main.5cf9bb52.chunk.css",
+    "main.js": "/static/js/main.be49017f.chunk.js",
+    "main.js.map": "/static/js/main.be49017f.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.d3871fe9.js",
     "runtime-main.js.map": "/static/js/runtime-main.d3871fe9.js.map",
-    "static/js/2.1643e499.chunk.js": "/static/js/2.1643e499.chunk.js",
-    "static/js/2.1643e499.chunk.js.map": "/static/js/2.1643e499.chunk.js.map",
+    "static/js/2.46695f45.chunk.js": "/static/js/2.46695f45.chunk.js",
+    "static/js/2.46695f45.chunk.js.map": "/static/js/2.46695f45.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.afc6d6e2.chunk.css.map": "/static/css/main.afc6d6e2.chunk.css.map",
-    "static/js/2.1643e499.chunk.js.LICENSE.txt": "/static/js/2.1643e499.chunk.js.LICENSE.txt",
-    "static/media/Github.e6473a3e.svg": "/static/media/Github.e6473a3e.svg",
-    "static/media/Instagram.0aa1a0b3.svg": "/static/media/Instagram.0aa1a0b3.svg",
-    "static/media/Linkedin.7166eec8.svg": "/static/media/Linkedin.7166eec8.svg",
-    "static/media/Twitter.0456490b.svg": "/static/media/Twitter.0456490b.svg",
-    "static/media/moon.f4139cf1.svg": "/static/media/moon.f4139cf1.svg",
+    "static/css/main.5cf9bb52.chunk.css.map": "/static/css/main.5cf9bb52.chunk.css.map",
+    "static/js/2.46695f45.chunk.js.LICENSE.txt": "/static/js/2.46695f45.chunk.js.LICENSE.txt",
+    "static/media/Github.4b5d85a7.svg": "/static/media/Github.4b5d85a7.svg",
+    "static/media/Instagram.06620b46.svg": "/static/media/Instagram.06620b46.svg",
+    "static/media/Linkedin.0e2dda24.svg": "/static/media/Linkedin.0e2dda24.svg",
+    "static/media/Twitter.a7adaaf3.svg": "/static/media/Twitter.a7adaaf3.svg",
+    "static/media/moon.48a8b468.svg": "/static/media/moon.48a8b468.svg",
     "static/media/nyc.5181cccd.jpg": "/static/media/nyc.5181cccd.jpg",
-    "static/media/sun.33231e8d.svg": "/static/media/sun.33231e8d.svg"
+    "static/media/sun.3c465f61.svg": "/static/media/sun.3c465f61.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.d3871fe9.js",
-    "static/js/2.1643e499.chunk.js",
-    "static/css/main.afc6d6e2.chunk.css",
-    "static/js/main.7e6ea091.chunk.js"
+    "static/js/2.46695f45.chunk.js",
+    "static/css/main.5cf9bb52.chunk.css",
+    "static/js/main.be49017f.chunk.js"
   ]
 }
