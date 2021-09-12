@@ -3,8 +3,8 @@ import { lightTheme, darkTheme } from 'providers/ThemeProvider';
 
 // Add background-images to this
 export const Wrapper = styled.div`
+  margin-top: 80px;
   width: 100%;
-  height: 90vh;
   display: flex;
   align-items: center;
 `;
@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
 export const ResumeWrapper = styled.section`
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 10px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -36,9 +36,14 @@ export const ResumeWrapper = styled.section`
       theme === 'light' ? lightTheme.darkColor : darkTheme.darkColor};
   }
 
-  .inProgress {
+  p {
     color: ${({ theme }) =>
-      theme === 'light' ? lightTheme.accent : darkTheme.accent};
+      theme === 'light' ? lightTheme.darkColor : darkTheme.darkColor};
+  }
+
+  li {
+    color: ${({ theme }) =>
+      theme === 'light' ? lightTheme.darkColor : darkTheme.darkColor};
   }
 
 `;
@@ -48,4 +53,5 @@ export const Divider = styled.div`
   border: 3px solid
     ${({ theme }) => (theme === 'light' ? lightTheme.accent : darkTheme.accent)};
   border-radius: 5px;
+  margin-bottom: 40px;
 `;
