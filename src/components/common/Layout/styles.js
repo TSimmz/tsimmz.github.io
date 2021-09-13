@@ -621,6 +621,13 @@ export const Global = createGlobalStyle`
       -ms-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
       -webkit-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
       font-feature-settings: 'kern', 'liga', 'clig', 'calt';
+      --ms-overflow-style: none;
+      scrollbar-width: none;
+      box-sizing: border-box;
+    }
+
+    body::-webkit-scrollbar {
+      display: none;
     }
 
     a {

@@ -1,18 +1,19 @@
 import React from 'react';
-import { Wrapper, Job, Row } from './styles';
+import { Wrapper, Job } from './styles';
+import { Row } from '../styles'; // Resume styles
 
-export const Experience = ({ experience }) => {
+export const Experience = ({ experience, theme }) => {
   return (
-    <Wrapper>
+    <Wrapper theme={theme}>
       <h4>Experience</h4>
       {experience.map(
         ({ company, location, start, end, position, responsibilities }) => (
           <Job>
-            <Row>
+            <Row italic={false}>
               <p>{company}</p>
               <p>{location}</p>
             </Row>
-            <Row>
+            <Row italic={true}>
               <p>{position}</p>
               <p>
                 {start} - {end}

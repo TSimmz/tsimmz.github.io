@@ -1,13 +1,22 @@
 import styled from 'styled-components';
+import { lightTheme, darkTheme } from 'providers/ThemeProvider';
 
 export const Wrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin_bottom: 40px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  padding: 0px 20px;
+  background-color: ${({ theme }) =>
+    theme === 'light' ? lightTheme.navbarColor : darkTheme.navbarColor};
+  ${({ theme }) =>
+    theme === 'light' ? 'filter: drop-shadow(0px 4px 4px #dfdfdf);' : ''}
 
-  h4 {
-    font-weight: bold;
+  &:hover {
+    border: 2px solid
+      ${({ theme }) =>
+        theme === 'light' ? lightTheme.accent : darkTheme.accent};
   }
 `;
 
@@ -17,9 +26,6 @@ export const SkillsContainer = styled.div`
   justify-content: center;
   flex-flow: row wrap;
   align-self: center;
-  width: 80%;
-  border: 2px solid black;
-  border-radius: 4px;
   padding: 16px 32px;
 `;
 
@@ -27,24 +33,22 @@ export const Skill = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  margin: 8px;
   width: 80px;
+  height: 80px;
   padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: ${({ theme }) =>
+    theme === 'light' ? '#afafaf' : darkTheme.background};
 
-  img {
-    width: 60px;
-    object-fit: cover;
-    margin: 0;
-    padding: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  transition: 500ms;
+  &:hover {
+    transform: scale(1.1);
   }
 
-  p {
+  img {
+    object-fit: contain;
     margin: 0;
-    padding: 4px 8px;
     display: flex;
     justify-content: center;
     align-items: center;

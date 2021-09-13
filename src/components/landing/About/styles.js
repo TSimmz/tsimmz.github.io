@@ -5,13 +5,13 @@ import { lightTheme, darkTheme } from 'providers/ThemeProvider';
 export const Wrapper = styled.div`
   width: 100%;
   height: 90vh;
-  margin: 20px 0px;
+  margin: 92px 0px;
   display: flex;
   align-items: center;
 
   @media (max-width: 1310px) {
     height: 80vh;
-    margin: 50px 0px;
+    margin: 122px 0px;
   }
 `;
 

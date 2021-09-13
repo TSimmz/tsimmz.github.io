@@ -19,9 +19,9 @@ export const Resume = ({ timeout }) => {
         <ResumeWrapper id='resume' theme={theme}>
           <h1>Resume</h1>
           <Divider theme={theme} />
-          <Education education={resume.education} />
-          <Experience experience={resume.workExperience} />
-          <Skills skills={resume.skills} />
+          <Education education={resume.education} theme={theme} />
+          <Experience experience={resume.workExperience} theme={theme} />
+          <Skills skills={resume.skills} theme={theme} />
         </ResumeWrapper>
       </Wrapper>
     </Fade>
