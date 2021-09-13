@@ -17,7 +17,7 @@
       "end": "Current",
       "position": "Frontend Software Engineer",
       "responsibilities": [
-        "Designed and mocked up production components using Figma",
+        "Designed and mocked up production components using Figma.",
         "Developed more than a dozen UI components using React and Typescript."
       ]
     },
@@ -39,9 +39,31 @@
       "end": "February 2019",
       "position": "Integration Specialist",
       "responsibilities": [
-        "Performed full system integration during the life of a simulator including: cold starting PCs, network integration, code integration, and testing",
+        "Performed full system integration during the life of a simulator including: cold starting PCs, network integration, code integration, and code testing.",
         "Provided support to engineers in various departments during their time on site.",
         "Traveled around the country to deploy simulation systems on multiple military bases and sites."
+      ]
+    },
+    {
+      "company": "CAE USA Tampa",
+      "location": "Tampa, FL",
+      "start": "January 2017",
+      "end": "December 2017",
+      "position": "Software Engineer Co-op",
+      "responsibilities": [
+        "Assisted in the development of a C# application to use flight test data to automate the generation of macros used to initialize the simulation software.",
+        "Refined and ran cold start procedures that effected more than two dozen mission critical simulator laptops."
+      ]
+    },
+    {
+      "company": "CAE USA Tampa",
+      "location": "Tampa, FL",
+      "start": "December 2015",
+      "end": "January 2017",
+      "position": "Technical Writer Co-op",
+      "responsibilities": [
+        "Provided macros and windows scripting to streamline the technical writing department.",
+        "Created instructor guies, maintenance technical manuals, and user handbooks for simulators and trainers."
       ]
     }
   ],

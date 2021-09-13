@@ -27,9 +27,9 @@ export const ResumeWrapper = styled.section`
   }
 
   h4 {
-    margin: 20px auto;
+    margin: 20px auto 30px;
     font-size: 2rem;
-    font-weight: normal;
+    font-weight: bold;
     letter-spacing: 1px;
     color: ${({ theme }) =>
       theme === 'light' ? lightTheme.darkColor : darkTheme.darkColor};
@@ -43,6 +43,7 @@ export const ResumeWrapper = styled.section`
   }
 
   li {
+    list-style: square;
     margin-left: 50px;
     margin-bottom: 20px;
     color: ${({ theme }) =>
