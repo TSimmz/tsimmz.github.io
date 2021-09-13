@@ -7,6 +7,7 @@ export const Wrapper = styled.div`
   height: 90vh;
   display: flex;
   align-items: center;
+  margin-top: 72px;
 `;
 
 export const HeroWrapper = styled.section`
@@ -19,7 +20,7 @@ export const HeroWrapper = styled.section`
   h1 {
     font-size: 144px;
     letter-spacing: 1.5rem;
-    margin:bottom: 2rem;
+    margin-bottom: 2rem;
     width: 50vw;
 
     color: ${({ theme }) =>
@@ -34,15 +35,14 @@ export const HeroWrapper = styled.section`
     @media (max-width: 2035px) {
       font-size: 104px;
       letter-spacing: 1.1rem;
-    } 
+    }
 
     @media (max-width: 1710) {
-      
-    } 
+    }
   }
 
   h4 {
-    font-size: 2rem; 
+    font-size: 2rem;
     font-weight: normal;
     letter-spacing: 1px;
     margin-top: 28px;

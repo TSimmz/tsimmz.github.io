@@ -2,10 +2,15 @@ import styled from 'styled-components';
 import { lightTheme, darkTheme } from 'providers/ThemeProvider';
 
 export const Wrapper = styled.div`
+  position: fixed;
+  top: 0;
+  z-index: 3;
   background: transparent;
   width: 100%;
   background-color: ${({ theme }) =>
     theme === 'light' ? lightTheme.navbarColor : darkTheme.navbarColor};
+  ${({ theme }) =>
+    theme === 'light' ? 'filter: drop-shadow(0px 5px 2px #efefef);' : ''}
   transition: 500ms;
 `;
 
