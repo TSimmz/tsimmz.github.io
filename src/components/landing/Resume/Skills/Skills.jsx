@@ -1,8 +1,53 @@
 import React from 'react';
 import { Skill, SkillsContainer, Wrapper } from './styles';
 import { Tooltip } from '@material-ui/core';
+import { withStyles } from '@material-ui/styles';
+import { lightTheme, darkTheme } from 'providers/ThemeProvider';
+
+const CustomToolTip = withStyles(() => ({
+  tooltip: {
+    fontFamily: 'Source Sans Pro',
+    fontSize: '14px',
+  },
+}))(Tooltip);
+
+const LightToolTip = withStyles(() => ({
+  tooltip: {
+    color: lightTheme.background,
+    backgroundColor: lightTheme.accent,
+  },
+  arrow: {
+    color: lightTheme.accent,
+  },
+}))(CustomToolTip);
+
+const DarkToolTip = withStyles(() => ({
+  tooltip: {
+    color: darkTheme.darkColor,
+    backgroundColor: darkTheme.accent,
+  },
+  arrow: {
+    color: darkTheme.accent,
+  },
+}))(CustomToolTip);
 
 export const Skills = ({ skills, theme }) => {
+  const renderImageWithToolTip = (name, icon, theme) => {
+    const location = 'bottom-center';
+    if (theme === 'light') {
+      return (
+        <LightToolTip title={name} aria-label={name} arrow placement={location}>
+          <img src={getImage(icon)} alt={name} />
+        </LightToolTip>
+      );
+    }
+    return (
+      <DarkToolTip title={name} aria-label={name} arrow placement={location}>
+        <img src={getImage(icon)} alt={name} />
+      </DarkToolTip>
+    );
+  };
+
   const getImage = (path) => {
     return `${process.env.PUBLIC_URL}/` + path;
   };
@@ -13,9 +58,7 @@ export const Skills = ({ skills, theme }) => {
       <SkillsContainer>
         {skills.map(({ name, icon }) => (
           <Skill theme={theme}>
-            <Tooltip title={name} aria-label={name}>
-              <img src={getImage(icon)} alt={name} />
-            </Tooltip>
+            {renderImageWithToolTip(name, icon, theme)}
           </Skill>
         ))}
       </SkillsContainer>

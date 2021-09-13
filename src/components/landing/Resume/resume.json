@@ -69,8 +69,20 @@
   ],
   "skills": [
     {
-      "name": "VS Code",
-      "icon": "assets/skills/vscode.png"
+      "name": "Git",
+      "icon": "assets/skills/git.png"
+    },
+    {
+      "name": "GitHub",
+      "icon": "assets/skills/github.png"
+    },
+    {
+      "name": "HTML 5",
+      "icon": "assets/skills/HTML5.png"
+    },
+    {
+      "name": "CSS 3",
+      "icon": "assets/skills/CSS3.png"
     },
     {
       "name": "Javascript",
@@ -93,24 +105,12 @@
       "icon": "assets/skills/styled-components.png"
     },
     {
-      "name": "HTML 5",
-      "icon": "assets/skills/HTML5.png"
-    },
-    {
-      "name": "CSS 3",
-      "icon": "assets/skills/CSS3.png"
-    },
-    {
       "name": "NodeJS",
       "icon": "assets/skills/nodejs.png"
     },
     {
-      "name": "Git",
-      "icon": "assets/skills/git.png"
-    },
-    {
-      "name": "GitHub",
-      "icon": "assets/skills/github.png"
+      "name": "VS Code",
+      "icon": "assets/skills/vscode.png"
     },
     {
       "name": "Figma",

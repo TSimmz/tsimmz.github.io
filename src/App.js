@@ -2,7 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Layout, Seo } from 'components/common';
 import { Header } from 'components/theme';
-import { Home, About, Resume, Portfolio, Contact } from 'components/landing';
+import { Home, About, Portfolio, Contact } from 'components/landing';
+import { Resume } from './components/landing/Resume/Resume.jsx';
 import ThemeProvider from 'providers/ThemeProvider';
 
 const timeout = 1000;
