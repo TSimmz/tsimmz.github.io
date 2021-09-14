@@ -1,7 +1,9 @@
 import styled from 'styled-components';
+import { lightTheme, darkTheme } from 'providers/ThemeProvider';
 
 export const Error = styled.span`
-  color: #ff4136;
+  color: ${({ theme }) =>
+    theme === 'light' ? lightTheme.accent : darkTheme.accent};
 `;
 
 export const Center = styled.div`
@@ -15,12 +17,17 @@ export const Center = styled.div`
 export const InputField = styled.div`
   position: relative;
   margin-bottom: 1rem;
+  width: 650px;
 `;
 
 export const Input = styled.input`
   width: 100%;
   box-sizing: border-box;
-  border: 2px solid #6c63ff;
+  background-color: ${({ theme }) =>
+    theme === 'light' ? lightTheme.navbarColor : darkTheme.navbarColor};
+  border: 2px solid
+    ${({ theme }) =>
+      theme === 'light' ? lightTheme.lightColor : darkTheme.lightColor};
   padding: 0.8rem 1rem;
   border-radius: 7px;
   margin-bottom: 0.5rem;
@@ -29,10 +36,10 @@ export const Input = styled.input`
   ${({ error }) =>
     error &&
     `
-		border-color: #ff4136;
+		border-color: ${darkTheme.accent};
 	`}
 
   &::placeholder {
-    color: #a7a7a7;
+    color: ${lightTheme.lightColor};
   }
 `;

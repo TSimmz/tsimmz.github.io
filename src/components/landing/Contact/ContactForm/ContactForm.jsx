@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Formik, Form, FastField, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
 import { url } from 'data/config';
 import { Error, InputField, Input } from './styles';
+import { ThemeContext } from 'providers/ThemeProvider';
 
 const ContactForm = () => {
+  const { theme } = useContext(ThemeContext);
+
   const initialValues = {
     name: '',
     email: '',
@@ -75,8 +78,9 @@ const ContactForm = () => {
               aria-label='name'
               placeholder='Full name*'
               error={touched.name && errors.name}
+              theme={theme}
             />
-            <ErrorMessage component={Error} name='name' />
+            <Error as={ErrorMessage} name='name' theme={theme} />
           </InputField>
           <InputField>
             <Input
@@ -88,6 +92,7 @@ const ContactForm = () => {
               aria-label='email'
               placeholder='Email*'
               error={touched.email && errors.email}
+              theme={theme}
             />
             <ErrorMessage component={Error} name='email' />
           </InputField>
@@ -100,23 +105,25 @@ const ContactForm = () => {
               aria-label='subject'
               placeholder='Subject*'
               error={touched.subject && errors.subject}
+              theme={theme}
             />
             <ErrorMessage component={Error} name='subject' />
           </InputField>
           <InputField>
-					<Input
-						as={FastField}
-						component="textarea"
-						aria-label="message"
-						id="message"
-						rows="8"
-						type="text"
-						name="message"
-						placeholder="Message*"
-						error={touched.message && errors.message}
-					/>
-					<ErrorMessage component={Error} name="message" />
-				</InputField>
+            <Input
+              as={FastField}
+              component='textarea'
+              aria-label='message'
+              id='message'
+              rows='8'
+              type='text'
+              name='message'
+              placeholder='Message*'
+              error={touched.message && errors.message}
+              theme={theme}
+            />
+            <ErrorMessage component={Error} name='message' />
+          </InputField>
         </Form>
       )}
     </Formik>
