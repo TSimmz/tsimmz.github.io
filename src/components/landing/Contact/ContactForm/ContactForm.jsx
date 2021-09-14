@@ -78,6 +78,45 @@ const ContactForm = () => {
             />
             <ErrorMessage component={Error} name='name' />
           </InputField>
+          <InputField>
+            <Input
+              as={FastField}
+              id='email'
+              type='email'
+              name='email'
+              component='input'
+              aria-label='email'
+              placeholder='Email*'
+              error={touched.email && errors.email}
+            />
+            <ErrorMessage component={Error} name='email' />
+          </InputField>
+          <InputField>
+            <Input
+              as={FastField}
+              type='text'
+              name='subject'
+              component='input'
+              aria-label='subject'
+              placeholder='Subject*'
+              error={touched.subject && errors.subject}
+            />
+            <ErrorMessage component={Error} name='subject' />
+          </InputField>
+          <InputField>
+					<Input
+						as={FastField}
+						component="textarea"
+						aria-label="message"
+						id="message"
+						rows="8"
+						type="text"
+						name="message"
+						placeholder="Message*"
+						error={touched.message && errors.message}
+					/>
+					<ErrorMessage component={Error} name="message" />
+				</InputField>
         </Form>
       )}
     </Formik>
