@@ -10,42 +10,31 @@ export const Wrapper = styled.div`
 `;
 
 export const ContactWrapper = styled.section`
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 0 20px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
 
   h1 {
     font-size: 144px;
     letter-spacing: 1.5rem;
-    margin:bottom: 2rem;
+    margin-bottom: 2rem;
 
     color: ${({ theme }) =>
       theme === 'light' ? lightTheme.darkColor : darkTheme.darkColor};
     transition: 500ms;
   }
+`;
 
-  h4 {
-    font-size: 2rem; 
-    font-weight: normal;
-    letter-spacing: 1px;
-    margin-top: 28px;
-    color: ${({ theme }) =>
-      theme === 'light' ? lightTheme.darkColor : darkTheme.darkColor};
-  }
-
-  .inProgress {
-    color: ${({ theme }) =>
-      theme === 'light' ? lightTheme.accent : darkTheme.accent};
-  }
-
+export const FormWrapper = styled.div`
+  display: flex;
 `;
 
 export const Divider = styled.div`
-  width: 100%;
+  height: inherit;
+  margin: 0 50px;
   border: 3px solid
     ${({ theme }) => (theme === 'light' ? lightTheme.accent : darkTheme.accent)};
   border-radius: 5px;
+  transition: 500ms;
 `;
