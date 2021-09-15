@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
-import { Formik, Form, FastField, ErrorMessage } from 'formik';
+import { Formik, Form, FastField, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
+import Recaptcha from 'react-google-recaptcha';
 import { url } from 'data/config';
-import { Error, InputField, Input } from './styles';
+import { Button } from 'components/common';
+import { Error, InputField, Input, Submit} from './styles';
 import { ThemeContext } from 'providers/ThemeProvider';
 
 const ContactForm = () => {
@@ -41,7 +43,7 @@ const ContactForm = () => {
         url:
           process.env.NODE_ENV !== 'development'
             ? `${url}/api/contact`
-            : 'http://localhost:3000/api/contact',
+            : 'http://localhost:3001/api/contact',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -68,10 +70,10 @@ const ContactForm = () => {
       validationSchema={validationSchema}
       onSubmit={onSubmit}>
       {({ values, touched, errors, setFieldValue, isSubmitting }) => (
-        <Form>
+        <Form style={{margin: 0}}>
           <InputField>
             <Input
-              as={FastField}
+              as={Field}
               type='text'
               name='name'
               component='input'
@@ -80,11 +82,11 @@ const ContactForm = () => {
               error={touched.name && errors.name}
               theme={theme}
             />
-            <Error as={ErrorMessage} name='name' theme={theme} />
+            <ErrorMessage component={Error} name='name' theme={theme}/>
           </InputField>
           <InputField>
             <Input
-              as={FastField}
+              as={Field}
               id='email'
               type='email'
               name='email'
@@ -94,11 +96,11 @@ const ContactForm = () => {
               error={touched.email && errors.email}
               theme={theme}
             />
-            <ErrorMessage component={Error} name='email' />
+            <ErrorMessage component={Error} name='email' theme={theme}/>
           </InputField>
           <InputField>
             <Input
-              as={FastField}
+              as={Field}
               type='text'
               name='subject'
               component='input'
@@ -107,11 +109,11 @@ const ContactForm = () => {
               error={touched.subject && errors.subject}
               theme={theme}
             />
-            <ErrorMessage component={Error} name='subject' />
+            <ErrorMessage component={Error} name='subject' theme={theme}/>
           </InputField>
           <InputField>
             <Input
-              as={FastField}
+              as={Field}
               component='textarea'
               aria-label='message'
               id='message'
@@ -122,8 +124,33 @@ const ContactForm = () => {
               error={touched.message && errors.message}
               theme={theme}
             />
-            <ErrorMessage component={Error} name='message' />
+            <ErrorMessage component={Error} name='message' theme={theme}/>
           </InputField>
+          { values.name &&
+					  values.email &&
+            values.subject &&
+            values.message &&
+            process.env.NODE_ENV !== "development" && (
+						<InputField>
+							<FastField
+								component={Recaptcha}
+								sitekey={process.env.REACT_APP_PORTFOLIO_RECAPTCHA}
+								name="recaptcha"
+								onChange={(value) => setFieldValue("recaptcha", value)}
+							/>
+							<ErrorMessage component={Error} name="recaptcha" />
+						</InputField>
+					)}
+          {values.success && (
+					<InputField>
+							<h4>
+								Your message has been successfully sent, I will get back to you ASAP!
+							</h4>
+					</InputField>
+				)}
+					<Button as={Submit} theme={theme} secondary type="submit" disabled={isSubmitting}>
+						Submit
+					</Button>
         </Form>
       )}
     </Formik>

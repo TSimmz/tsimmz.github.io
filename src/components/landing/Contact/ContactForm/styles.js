@@ -6,14 +6,6 @@ export const Error = styled.span`
     theme === 'light' ? lightTheme.accent : darkTheme.accent};
 `;
 
-export const Center = styled.div`
-  text-align: left;
-
-  h4 {
-    font-weight: normal;
-  }
-`;
-
 export const InputField = styled.div`
   position: relative;
   margin-bottom: 1rem;
@@ -33,8 +25,19 @@ export const Input = styled.input`
   margin-bottom: 0.5rem;
   transition: 0.3s;
 
-  ${({ error }) =>
-    error &&
+  &:focus {
+    border-color: ${({ theme }) =>
+      theme === 'light' ? lightTheme.darkColor : darkTheme.darkColor}; 
+  }
+
+  ${({ error, theme }) =>
+    error && theme === 'light' &&
+    `
+		border-color: ${lightTheme.accent};
+	`}
+
+${({ error, theme }) =>
+    error && theme !== 'light' &&
     `
 		border-color: ${darkTheme.accent};
 	`}
@@ -42,4 +45,16 @@ export const Input = styled.input`
   &::placeholder {
     color: ${lightTheme.lightColor};
   }
+`;
+
+export const Submit = styled.button`
+  width: 175px;
+  height: 50px;
+  font-size: 24px;
+  margin-top: 16px;
+
+  color: ${({ theme }) =>
+      theme === 'light' ? lightTheme.darkColor : darkTheme.darkColor}; 
+  background-color: ${({ theme }) =>
+      theme === 'light' ? lightTheme.navbarColor : darkTheme.navbarColor};
 `;
