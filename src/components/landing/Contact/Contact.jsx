@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from 'providers/ThemeProvider';
-import { Wrapper, ContactWrapper, Divider } from './styles';
+import { Wrapper, ContactWrapper, Divider, FormWrapper } from './styles';
 import { Fade } from '@material-ui/core';
+import ContactForm from './ContactForm/ContactForm';
 
 export const Contact = ({ timeout }) => {
   const { theme } = useContext(ThemeContext);
@@ -14,8 +15,10 @@ export const Contact = ({ timeout }) => {
       <Wrapper theme={theme}>
         <ContactWrapper id='contact' theme={theme}>
           <h1>Contact</h1>
-          <Divider theme={theme} />
-          <h4 className='inProgress'>{'[ Design in progress ]'}</h4>
+          <FormWrapper>
+            <Divider theme={theme} />
+            <ContactForm />
+          </FormWrapper>
         </ContactWrapper>
       </Wrapper>
     </Fade>

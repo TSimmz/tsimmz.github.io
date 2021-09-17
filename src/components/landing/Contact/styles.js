@@ -5,47 +5,64 @@ import { lightTheme, darkTheme } from 'providers/ThemeProvider';
 export const Wrapper = styled.div`
   width: 100%;
   height: 90vh;
+  margin-top: 72px;
   display: flex;
   align-items: center;
 `;
 
 export const ContactWrapper = styled.section`
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
   padding: 0 20px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+
+  @media (max-width: 1310px) {
+    flex-direction: column;
+  }
 
   h1 {
-    font-size: 144px;
+    font-size: 96px;
     letter-spacing: 1.5rem;
-    margin:bottom: 2rem;
+    margin-bottom: 2rem;
+    align-self: center;
 
     color: ${({ theme }) =>
       theme === 'light' ? lightTheme.darkColor : darkTheme.darkColor};
     transition: 500ms;
+    flex: 1;
+  }
+`;
+
+export const FormWrapper = styled.div`
+  display: flex;
+
+  @media (max-width: 1310px) {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
 
-  h4 {
-    font-size: 2rem; 
-    font-weight: normal;
-    letter-spacing: 1px;
-    margin-top: 28px;
-    color: ${({ theme }) =>
-      theme === 'light' ? lightTheme.darkColor : darkTheme.darkColor};
-  }
+  form {
+    margin: 0;
+    width: 20vw;
 
-  .inProgress {
-    color: ${({ theme }) =>
-      theme === 'light' ? lightTheme.accent : darkTheme.accent};
+    @media (max-width: 1310px) {
+      width: 40vw;
+    }
   }
-
 `;
 
 export const Divider = styled.div`
-  width: 100%;
+  height: inherit;
+  margin: 0 50px;
   border: 3px solid
     ${({ theme }) => (theme === 'light' ? lightTheme.accent : darkTheme.accent)};
   border-radius: 5px;
+  transition: 500ms;
+
+  @media (max-width: 1310px) {
+    height: 0;
+    width: 100%;
+    margin-bottom: 40px;
+  }
 `;
