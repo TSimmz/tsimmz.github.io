@@ -16,6 +16,10 @@ export const ContactWrapper = styled.section`
   padding: 0 20px;
   display: flex;
 
+  @media (max-width: 1310px) {
+    flex-direction: column;
+  }
+
   h1 {
     font-size: 96px;
     letter-spacing: 1.5rem;
@@ -31,7 +35,21 @@ export const ContactWrapper = styled.section`
 
 export const FormWrapper = styled.div`
   display: flex;
-  width: 60%;
+
+  @media (max-width: 1310px) {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  form {
+    margin: 0;
+    width: 20vw;
+
+    @media (max-width: 1310px) {
+      width: 40vw;
+    }
+  }
 `;
 
 export const Divider = styled.div`
@@ -41,4 +59,10 @@ export const Divider = styled.div`
     ${({ theme }) => (theme === 'light' ? lightTheme.accent : darkTheme.accent)};
   border-radius: 5px;
   transition: 500ms;
+
+  @media (max-width: 1310px) {
+    height: 0;
+    width: 100%;
+    margin-bottom: 40px;
+  }
 `;

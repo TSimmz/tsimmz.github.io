@@ -33,16 +33,15 @@ const DarkToolTip = withStyles(() => ({
 
 export const Skills = ({ skills, theme }) => {
   const renderImageWithToolTip = (name, icon, theme) => {
-    const location = 'bottom-center';
     if (theme === 'light') {
       return (
-        <LightToolTip title={name} aria-label={name} arrow placement={location}>
+        <LightToolTip title={name} aria-label={name} arrow>
           <img src={getImage(icon)} alt={name} />
         </LightToolTip>
       );
     }
     return (
-      <DarkToolTip title={name} aria-label={name} arrow placement={location}>
+      <DarkToolTip title={name} aria-label={name} arrow>
         <img src={getImage(icon)} alt={name} />
       </DarkToolTip>
     );

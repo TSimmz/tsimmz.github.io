@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { lightTheme, darkTheme } from 'providers/ThemeProvider';
+import { object } from 'yup/lib/locale';
 
 export const Error = styled.span`
   color: ${({ theme }) =>
@@ -9,12 +10,14 @@ export const Error = styled.span`
 export const InputField = styled.div`
   position: relative;
   margin-bottom: 1rem;
-  width: 650px;
+  width: 100%;
 `;
 
 export const Input = styled.input`
   width: 100%;
   box-sizing: border-box;
+  color: ${({ theme }) =>
+    theme === 'light' ? lightTheme.darkColor : darkTheme.darkColor};
   background-color: ${({ theme }) =>
     theme === 'light' ? lightTheme.navbarColor : darkTheme.navbarColor};
   border: 2px solid
@@ -27,17 +30,19 @@ export const Input = styled.input`
 
   &:focus {
     border-color: ${({ theme }) =>
-      theme === 'light' ? lightTheme.darkColor : darkTheme.darkColor}; 
+      theme === 'light' ? lightTheme.darkColor : darkTheme.darkColor};
   }
 
   ${({ error, theme }) =>
-    error && theme === 'light' &&
+    error &&
+    theme === 'light' &&
     `
 		border-color: ${lightTheme.accent};
 	`}
 
-${({ error, theme }) =>
-    error && theme !== 'light' &&
+  ${({ error, theme }) =>
+    error &&
+    theme !== 'light' &&
     `
 		border-color: ${darkTheme.accent};
 	`}
@@ -54,7 +59,37 @@ export const Submit = styled.button`
   margin-top: 16px;
 
   color: ${({ theme }) =>
-      theme === 'light' ? lightTheme.darkColor : darkTheme.darkColor}; 
+    theme === 'light' ? lightTheme.darkColor : darkTheme.darkColor};
   background-color: ${({ theme }) =>
-      theme === 'light' ? lightTheme.navbarColor : darkTheme.navbarColor};
+    theme === 'light' ? lightTheme.navbarColor : darkTheme.navbarColor};
+
+  &:disabled {
+    color: ${({ theme }) =>
+      theme === 'light'
+        ? lightTheme.darkColor + 'a1'
+        : darkTheme.darkColor + 'a1'};
+    background-color: ${({ theme }) =>
+      theme === 'light' ? lightTheme.lightColor : darkTheme.lightColor};
+  }
+`;
+
+export const EmailJS = styled.a`
+  width: 250px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  margin-top: 1.5rem;
+
+  p {
+    margin: 0;
+    color: ${({ theme }) =>
+      theme === 'light' ? lightTheme.lightColor : darkTheme.lightColor};
+  }
+
+  img {
+    margin: 0;
+    width: 50px;
+    height: 30px;
+    object-fit: contain;
+  }
 `;

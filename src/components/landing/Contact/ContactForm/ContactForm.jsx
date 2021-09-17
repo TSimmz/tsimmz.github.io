@@ -1,12 +1,13 @@
 import React, { useContext } from 'react';
 import { Formik, Form, FastField, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import axios from 'axios';
 import Recaptcha from 'react-google-recaptcha';
-import { url } from 'data/config';
+import { legalName } from 'data/config';
 import { Button } from 'components/common';
-import { Error, InputField, Input, Submit} from './styles';
+import { Error, InputField, Input, Submit, EmailJS } from './styles';
 import { ThemeContext } from 'providers/ThemeProvider';
+import * as emailjs from 'emailjs-com';
+import emailjsLogo from 'assets/logos/emailjs.png';
 
 const ContactForm = () => {
   const { theme } = useContext(ThemeContext);
@@ -38,22 +39,21 @@ const ContactForm = () => {
     { setSubmitting, resetForm, setFieldValue }
   ) => {
     try {
-      await axios({
-        method: 'POST',
-        url:
-          process.env.NODE_ENV !== 'development'
-            ? `${url}/api/contact`
-            : 'http://localhost:3001/api/contact',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        data: JSON.stringify({
-          name,
-          email,
-          subject,
-          message,
-        }),
-      });
+      const templateParams = {
+        to_name: legalName,
+        subject: subject,
+        from_name: name,
+        from_email: email,
+        message: message,
+      };
+
+      await emailjs.send(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        templateParams,
+        process.env.REACT_APP_EMAILJS_USER_ID
+      );
+
       setSubmitting(false);
       setFieldValue('success', true);
       setTimeout(() => resetForm(), 6000);
@@ -70,7 +70,7 @@ const ContactForm = () => {
       validationSchema={validationSchema}
       onSubmit={onSubmit}>
       {({ values, touched, errors, setFieldValue, isSubmitting }) => (
-        <Form style={{margin: 0}}>
+        <Form>
           <InputField>
             <Input
               as={Field}
@@ -82,7 +82,7 @@ const ContactForm = () => {
               error={touched.name && errors.name}
               theme={theme}
             />
-            <ErrorMessage component={Error} name='name' theme={theme}/>
+            <ErrorMessage component={Error} name='name' theme={theme} />
           </InputField>
           <InputField>
             <Input
@@ -96,7 +96,7 @@ const ContactForm = () => {
               error={touched.email && errors.email}
               theme={theme}
             />
-            <ErrorMessage component={Error} name='email' theme={theme}/>
+            <ErrorMessage component={Error} name='email' theme={theme} />
           </InputField>
           <InputField>
             <Input
@@ -109,7 +109,7 @@ const ContactForm = () => {
               error={touched.subject && errors.subject}
               theme={theme}
             />
-            <ErrorMessage component={Error} name='subject' theme={theme}/>
+            <ErrorMessage component={Error} name='subject' theme={theme} />
           </InputField>
           <InputField>
             <Input
@@ -124,33 +124,47 @@ const ContactForm = () => {
               error={touched.message && errors.message}
               theme={theme}
             />
-            <ErrorMessage component={Error} name='message' theme={theme}/>
+            <ErrorMessage component={Error} name='message' theme={theme} />
           </InputField>
-          { values.name &&
-					  values.email &&
+          {values.name &&
+            values.email &&
             values.subject &&
             values.message &&
-            process.env.NODE_ENV !== "development" && (
-						<InputField>
-							<FastField
-								component={Recaptcha}
-								sitekey={process.env.REACT_APP_PORTFOLIO_RECAPTCHA}
-								name="recaptcha"
-								onChange={(value) => setFieldValue("recaptcha", value)}
-							/>
-							<ErrorMessage component={Error} name="recaptcha" />
-						</InputField>
-					)}
+            process.env.NODE_ENV !== 'development' && (
+              <InputField>
+                <FastField
+                  component={Recaptcha}
+                  sitekey={process.env.REACT_APP_PORTFOLIO_RECAPTCHA}
+                  name='recaptcha'
+                  onChange={(value) => setFieldValue('recaptcha', value)}
+                />
+                <ErrorMessage component={Error} name='recaptcha' />
+              </InputField>
+            )}
           {values.success && (
-					<InputField>
-							<h4>
-								Your message has been successfully sent, I will get back to you ASAP!
-							</h4>
-					</InputField>
-				)}
-					<Button as={Submit} theme={theme} secondary type="submit" disabled={isSubmitting}>
-						Submit
-					</Button>
+            <InputField>
+              <h4>
+                Your message has been successfully sent, I will get back to you
+                ASAP!
+              </h4>
+            </InputField>
+          )}
+          <Button
+            as={Submit}
+            theme={theme}
+            secondary
+            type='submit'
+            disabled={isSubmitting}>
+            Submit
+          </Button>
+          <EmailJS
+            href='https://www.emailjs.com/'
+            target='_blank'
+            referrerPolicy='no-referrer'
+            theme={theme}>
+            <p>Powered by EmailJS</p>
+            <img src={emailjsLogo} alt='EmailJS logo'></img>
+          </EmailJS>
         </Form>
       )}
     </Formik>
