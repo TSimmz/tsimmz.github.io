@@ -63,4 +63,8 @@ export const Image = styled.img`
   ${({ theme }) =>
     theme === 'light' ? 'filter: drop-shadow(0px 4px 4px #afafaf);' : ''}
   transition: 500ms;
+
+  @media (max-width: 1310px) {
+    max-width: 50%;
+  }
 `;
