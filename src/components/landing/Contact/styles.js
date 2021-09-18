@@ -51,18 +51,3 @@ export const FormWrapper = styled.div`
     }
   }
 `;
-
-export const Divider = styled.div`
-  height: inherit;
-  margin: 0 50px;
-  border: 3px solid
-    ${({ theme }) => (theme === 'light' ? lightTheme.accent : darkTheme.accent)};
-  border-radius: 5px;
-  transition: 500ms;
-
-  @media (max-width: 1310px) {
-    height: 0;
-    width: 100%;
-    margin-bottom: 40px;
-  }
-`;

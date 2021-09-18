@@ -52,14 +52,6 @@ export const HeroWrapper = styled.section`
   }
 `;
 
-export const Divider = styled.div`
-  width: 100%;
-  border: 3px solid
-    ${({ theme }) => (theme === 'light' ? lightTheme.accent : darkTheme.accent)};
-  border-radius: 5px;
-  transition: 500ms;
-`;
-
 export const CTA = styled.button`
   margin-top: 150px;
   width: 240px;

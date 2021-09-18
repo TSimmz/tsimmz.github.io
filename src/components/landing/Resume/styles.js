@@ -51,13 +51,6 @@ export const ResumeWrapper = styled.section`
   }
 `;
 
-export const Divider = styled.div`
-  border: 3px solid
-    ${({ theme }) => (theme === 'light' ? lightTheme.accent : darkTheme.accent)};
-  border-radius: 5px;
-  margin: 30px 0px;
-`;
-
 export const ResumeBody = styled.div`
   display: flex;
   flex-direction: row;
