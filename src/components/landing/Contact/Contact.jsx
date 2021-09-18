@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from 'providers/ThemeProvider';
-import { Wrapper, ContactWrapper, FormWrapper } from './styles';
+import { Wrapper, ContactWrapper, FormWrapper, ContactDivider } from './styles';
 import { Divider, PageTitle } from 'components/common';
 import { Fade } from '@material-ui/core';
 import ContactForm from './ContactForm/ContactForm';
@@ -19,7 +19,7 @@ export const Contact = ({ timeout }) => {
             Contact
           </PageTitle>
           <FormWrapper>
-            <Divider vertical theme={theme} />
+            <Divider as={ContactDivider} vertical theme={theme} />
             <ContactForm />
           </FormWrapper>
         </ContactWrapper>
