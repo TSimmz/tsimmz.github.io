@@ -20,7 +20,7 @@ export const PortfolioWrapper = styled.section`
   h1 {
     font-size: 144px;
     letter-spacing: 1.5rem;
-    margin:bottom: 2rem;
+    margin-bottom: 2rem;
 
     color: ${({ theme }) =>
       theme === 'light' ? lightTheme.darkColor : darkTheme.darkColor};
@@ -28,7 +28,7 @@ export const PortfolioWrapper = styled.section`
   }
 
   h4 {
-    font-size: 2rem; 
+    font-size: 2rem;
     font-weight: normal;
     letter-spacing: 1px;
     margin-top: 28px;
@@ -40,7 +40,6 @@ export const PortfolioWrapper = styled.section`
     color: ${({ theme }) =>
       theme === 'light' ? lightTheme.accent : darkTheme.accent};
   }
-
 `;
 
 export const Divider = styled.div`

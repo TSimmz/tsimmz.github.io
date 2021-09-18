@@ -2,12 +2,11 @@ import styled from 'styled-components';
 import { lightTheme, darkTheme } from 'providers/ThemeProvider';
 
 export const Wrapper = styled.div`
-  width: 100%;
   display: flex;
   flex-direction: column;
   border-radius: 6px;
   margin-bottom: 20px;
-  padding: 0px 20px;
+  padding: 0px 40px;
   background-color: ${({ theme }) =>
     theme === 'light' ? lightTheme.navbarColor : darkTheme.navbarColor};
   ${({ theme }) =>
@@ -26,5 +25,5 @@ export const Wrapper = styled.div`
 export const Job = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
+  margin-top: 40px;
 `;

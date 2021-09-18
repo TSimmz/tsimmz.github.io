@@ -11,35 +11,12 @@ export const Wrapper = styled.div`
 `;
 
 export const HeroWrapper = styled.section`
-  max-width: 50vw;
+  max-width: 55vw;
   margin: 0 auto;
   padding: 0 20px;
+
   display: flex;
   flex-direction: column;
-
-  h1 {
-    font-size: 144px;
-    letter-spacing: 1.5rem;
-    margin-bottom: 2rem;
-    width: 50vw;
-
-    color: ${({ theme }) =>
-      theme === 'light' ? lightTheme.darkColor : darkTheme.darkColor};
-    transition: 500ms;
-
-    @media (max-width: 2360px) {
-      font-size: 124px;
-      letter-spacing: 1.3rem;
-    }
-
-    @media (max-width: 2035px) {
-      font-size: 104px;
-      letter-spacing: 1.1rem;
-    }
-
-    @media (max-width: 1710) {
-    }
-  }
 
   h4 {
     font-size: 2rem;
@@ -50,14 +27,6 @@ export const HeroWrapper = styled.section`
       theme === 'light' ? lightTheme.darkColor : darkTheme.darkColor};
     transition: 500ms;
   }
-`;
-
-export const Divider = styled.div`
-  width: 100%;
-  border: 3px solid
-    ${({ theme }) => (theme === 'light' ? lightTheme.accent : darkTheme.accent)};
-  border-radius: 5px;
-  transition: 500ms;
 `;
 
 export const CTA = styled.button`

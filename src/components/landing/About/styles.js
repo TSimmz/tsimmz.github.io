@@ -4,106 +4,67 @@ import { lightTheme, darkTheme } from 'providers/ThemeProvider';
 // Add background-images to this
 export const Wrapper = styled.div`
   width: 100%;
-  height: 90vh;
+  height: 85vh;
   margin: 92px 0px;
   display: flex;
   align-items: center;
-
-  @media (max-width: 1310px) {
-    height: 80vh;
-    margin: 122px 0px;
-  }
 `;
 
 export const AboutWrapper = styled.section`
-  max-width: 1920px;
+  max-width: 55vw;
   height: 55vh;
   margin: 0 auto;
   padding: 0 20px;
+
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: flex-end;
   align-items: center;
 
   @media (max-width: 1310px) {
     flex-direction: column;
-  }
-
-  h1 {
-    font-size: 144px;
-    letter-spacing: 1.5rem;
-    margin-bottom: 0.5rem;
-
-    color: ${({ theme }) =>
-      theme === 'light' ? lightTheme.darkColor : darkTheme.darkColor};
-    transition: 500ms;
-
-    @media (max-width: 1500px) {
-      font-size: 124px;
-    }
-
-    @media (max-width: 1310px) {
-      font-size: 100px;
-      letter-spacing: 1.3rem;
-      align-self: center;
-    }
-  }
-
-  p {
-    font-size: 22px;
-    font-weight: normal;
-    color: ${({ theme }) =>
-      theme === 'light' ? lightTheme.darkColor : darkTheme.darkColor};
-    transition: 500ms;
-
-    @media (max-width: 1500px) {
-      font-size: 20px;
-    }
+    justify-content: center;
   }
 `;
 
-export const CarouselWrapper = styled.div`
-  width: 650px;
-  transform: translateX(125px);
-`;
-
-export const Details = styled.div`
-  flex-shrink: 1;
-  max-width: 660px;
-  display: flex;
-  flex-direction: column;
-`;
-
-export const Divider = styled.div`
-  height: inherit;
-  margin: 0 50px;
-  border: 3px solid
-    ${({ theme }) => (theme === 'light' ? lightTheme.accent : darkTheme.accent)};
-  border-radius: 5px;
-  transition: 500ms;
-
+export const AboutDivider = styled.div`
   @media (max-width: 1310px) {
     height: 0;
     width: 100%;
+    margin: 20px 0;
   }
 `;
 
-export const ImageWrapper = styled.div`
-  height: 50vh;
+export const Details = styled.div`
+  flex-shrink: 10;
+  flex-grow: 1;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
 
   @media (max-width: 1310px) {
-    height: 30vh;
-    margin-bottom: 40px;
+    align-items: center;
   }
 
-  img {
-    height: inherit;
-    margin: 0 auto;
-    object-fit: cover;
+  p {
+    font-size: 1.2rem;
+    color: ${({ theme }) =>
+      theme === 'light' ? lightTheme.darkColor : darkTheme.darkColor};
+    transition: 500ms;
+  }
+`;
 
-    ${({ theme }) =>
-      theme === 'light' ? 'filter: drop-shadow(0px 4px 4px #afafaf);' : ''}
+export const Image = styled.img`
+  display: block;
+  max-width: 40%;
+  object-fit: contain;
+  border-radius: 10px;
+  align-self: center;
+
+  ${({ theme }) =>
+    theme === 'light' ? 'filter: drop-shadow(0px 4px 4px #afafaf);' : ''}
+  transition: 500ms;
+
+  @media (max-width: 1310px) {
+    max-width: 50%;
   }
 `;

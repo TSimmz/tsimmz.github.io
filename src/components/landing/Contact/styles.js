@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { lightTheme, darkTheme } from 'providers/ThemeProvider';
 
 // Add background-images to this
 export const Wrapper = styled.div`
@@ -19,17 +18,13 @@ export const ContactWrapper = styled.section`
   @media (max-width: 1310px) {
     flex-direction: column;
   }
+`;
 
-  h1 {
-    font-size: 96px;
-    letter-spacing: 1.5rem;
-    margin-bottom: 2rem;
-    align-self: center;
-
-    color: ${({ theme }) =>
-      theme === 'light' ? lightTheme.darkColor : darkTheme.darkColor};
-    transition: 500ms;
-    flex: 1;
+export const ContactDivider = styled.div`
+  @media (max-width: 1310px) {
+    height: 0;
+    width: 100%;
+    margin: 20px 0 40px;
   }
 `;
 
@@ -49,20 +44,5 @@ export const FormWrapper = styled.div`
     @media (max-width: 1310px) {
       width: 40vw;
     }
-  }
-`;
-
-export const Divider = styled.div`
-  height: inherit;
-  margin: 0 50px;
-  border: 3px solid
-    ${({ theme }) => (theme === 'light' ? lightTheme.accent : darkTheme.accent)};
-  border-radius: 5px;
-  transition: 500ms;
-
-  @media (max-width: 1310px) {
-    height: 0;
-    width: 100%;
-    margin-bottom: 40px;
   }
 `;

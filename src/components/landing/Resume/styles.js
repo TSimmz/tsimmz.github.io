@@ -11,20 +11,10 @@ export const Wrapper = styled.div`
 export const ResumeWrapper = styled.section`
   max-width: 1200px;
   margin: 20px auto;
-  padding: 10px 20px;
+  padding: 10px 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  h1 {
-    width: max-content;
-    font-size: 144px;
-    letter-spacing: 1.5rem;
-    margin: 0 auto;
-    color: ${({ theme }) =>
-      theme === 'light' ? lightTheme.darkColor : darkTheme.darkColor};
-    transition: 500ms;
-  }
 
   h4 {
     margin: 20px auto 30px;
@@ -33,29 +23,33 @@ export const ResumeWrapper = styled.section`
     letter-spacing: 1px;
     color: ${({ theme }) =>
       theme === 'light' ? lightTheme.darkColor : darkTheme.darkColor};
+    transition: 500ms;
   }
 
   p {
-    font-size: 22px;
+    font-size: 1.5rem;
     margin-bottom: 0.5rem;
     color: ${({ theme }) =>
       theme === 'light' ? lightTheme.darkColor : darkTheme.darkColor};
+    transition: 500ms;
+
+    @media (max-width: 770px) {
+      font-size: 1.1rem;
+    }
+  }
+
+  ul {
+    margin-top: 1rem;
   }
 
   li {
-    list-style: square;
+    font-size: 1.2rem;
     margin-left: 50px;
     margin-bottom: 20px;
     color: ${({ theme }) =>
       theme === 'light' ? lightTheme.darkColor : darkTheme.darkColor};
+    transition: 500ms;
   }
-`;
-
-export const Divider = styled.div`
-  border: 3px solid
-    ${({ theme }) => (theme === 'light' ? lightTheme.accent : darkTheme.accent)};
-  border-radius: 5px;
-  margin: 30px 0px;
 `;
 
 export const ResumeBody = styled.div`
@@ -75,6 +69,6 @@ export const Column = styled.div`
 export const Row = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.3rem;
   font-style: ${({ italic }) => (italic ? 'italic' : 'normal')};
 `;
