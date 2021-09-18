@@ -15,7 +15,7 @@ export const Home = ({ timeout }) => {
       unmountOnExit>
       <Wrapper theme={theme}>
         <HeroWrapper id='home' theme={theme}>
-          <PageTitle>Tyler Simoni</PageTitle>
+          <PageTitle theme={theme}>Tyler Simoni</PageTitle>
           <Divider horizontal theme={theme} />
           <h4>
             I'm a frontend developer and designer based in the Tampa Bay area.

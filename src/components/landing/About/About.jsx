@@ -26,8 +26,10 @@ export const About = ({ timeout }) => {
             <img src={nyc} alt='times square' />
           </ImageWrapper>
           <Divider as={AboutDivider} vertical theme={theme} />
-          <Details>
-            <PageTitle className='margin-bottom'>About</PageTitle>
+          <Details theme={theme}>
+            <PageTitle theme={theme} className='margin-bottom'>
+              About
+            </PageTitle>
             {about.details.map((paragraph) => (
               <p key={paragraph.slice(0, 10)}>{paragraph}</p>
             ))}

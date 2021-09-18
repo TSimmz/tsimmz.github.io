@@ -18,7 +18,9 @@ export const Resume = ({ timeout }) => {
       unmountOnExit>
       <Wrapper theme={theme}>
         <ResumeWrapper id='resume' theme={theme}>
-          <PageTitle className='center'>Resume</PageTitle>
+          <PageTitle theme={theme} className='center'>
+            Resume
+          </PageTitle>
           <Divider horizontal theme={theme} />
           <Education education={resume.education} theme={theme} />
           <Experience experience={resume.workExperience} theme={theme} />

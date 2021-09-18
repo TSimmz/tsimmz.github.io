@@ -15,7 +15,9 @@ export const Contact = ({ timeout }) => {
       unmountOnExit>
       <Wrapper theme={theme}>
         <ContactWrapper id='contact' theme={theme}>
-          <PageTitle className='center'>Contact</PageTitle>
+          <PageTitle theme={theme} className='center'>
+            Contact
+          </PageTitle>
           <FormWrapper>
             <Divider vertical theme={theme} />
             <ContactForm />
