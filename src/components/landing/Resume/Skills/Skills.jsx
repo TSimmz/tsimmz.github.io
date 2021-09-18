@@ -9,6 +9,9 @@ const CustomToolTip = withStyles(() => ({
     fontFamily: 'Source Sans Pro',
     fontSize: '14px',
   },
+  arrow: {
+    color: '#fff',
+  },
 }))(Tooltip);
 
 const LightToolTip = withStyles(() => ({
@@ -35,13 +38,13 @@ export const Skills = ({ skills, theme }) => {
   const renderImageWithToolTip = (name, icon, theme) => {
     if (theme === 'light') {
       return (
-        <LightToolTip title={name} aria-label={name} arrow>
+        <LightToolTip key={name} title={name} aria-label={name} arrow>
           <img src={getImage(icon)} alt={name} />
         </LightToolTip>
       );
     }
     return (
-      <DarkToolTip title={name} aria-label={name} arrow>
+      <DarkToolTip key={name} title={name} aria-label={name} arrow>
         <img src={getImage(icon)} alt={name} />
       </DarkToolTip>
     );
@@ -56,7 +59,7 @@ export const Skills = ({ skills, theme }) => {
       <h4>Skills</h4>
       <SkillsContainer>
         {skills.map(({ name, icon }) => (
-          <Skill theme={theme}>
+          <Skill key={name} theme={theme}>
             {renderImageWithToolTip(name, icon, theme)}
           </Skill>
         ))}
