@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { lightTheme, darkTheme } from 'providers/ThemeProvider';
-import { object } from 'yup/lib/locale';
 
 export const Error = styled.span`
   color: ${({ theme }) =>

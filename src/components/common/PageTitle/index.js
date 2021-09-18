@@ -2,9 +2,10 @@ import styled from 'styled-components';
 import { lightTheme, darkTheme } from 'providers/ThemeProvider';
 
 export const PageTitle = styled.h1`
-  font-size: 9rem;
+  font-size: clamp(4rem, 6vw + 1rem, 9rem);
   letter-spacing: 1.1vw;
   margin: 0;
+  white-space: normal;
 
   color: ${({ theme }) =>
     theme === 'light' ? lightTheme.darkColor : darkTheme.darkColor};
@@ -20,5 +21,21 @@ export const PageTitle = styled.h1`
 
   &.right {
     align-self: flex-end;
+  }
+
+  &.margin-bottom {
+    margin-bottom: 2.5rem;
+  }
+
+  &.margin-top {
+    margin-top: 2.5rem;
+  }
+
+  &.margin-left {
+    margin-left: 1.5rem;
+  }
+
+  &.margin-right {
+    margin-right: 1.5rem;
   }
 `;

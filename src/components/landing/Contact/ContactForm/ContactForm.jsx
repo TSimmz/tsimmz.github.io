@@ -157,14 +157,6 @@ const ContactForm = () => {
             disabled={isSubmitting}>
             Submit
           </Button>
-          <EmailJS
-            href='https://www.emailjs.com/'
-            target='_blank'
-            referrerPolicy='no-referrer'
-            theme={theme}>
-            <p>Powered by EmailJS</p>
-            <img src={emailjsLogo} alt='EmailJS logo'></img>
-          </EmailJS>
         </Form>
       )}
     </Formik>
@@ -172,3 +164,12 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
+
+// <EmailJS
+// href='https://www.emailjs.com/'
+// target='_blank'
+// referrerPolicy='no-referrer'
+// theme={theme}>
+// <p>Powered by EmailJS</p>
+// <img src={emailjsLogo} alt='EmailJS logo'></img>
+// </EmailJS>

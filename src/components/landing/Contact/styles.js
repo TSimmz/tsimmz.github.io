@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { lightTheme, darkTheme } from 'providers/ThemeProvider';
 
 // Add background-images to this
 export const Wrapper = styled.div`
