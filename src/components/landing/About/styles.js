@@ -18,12 +18,12 @@ export const AboutWrapper = styled.section`
 
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 
   @media (max-width: 1310px) {
     flex-direction: column;
-    justify-items: center;
+    justify-content: center;
   }
 `;
 
@@ -53,26 +53,14 @@ export const Details = styled.div`
   }
 `;
 
-export const ImageWrapper = styled.div`
-  display: flex;
-  flex-basis: 500px;
-  flex-shrink: 0;
-  padding: 10px;
+export const Image = styled.img`
+  display: block;
+  max-width: 40%;
+  object-fit: contain;
+  border-radius: 10px;
+  align-self: center;
 
-  @media (max-width: 1310px) {
-    width: 70%;
-  }
-
-  img {
-    display: block;
-    max-width: 100%;
-    object-fit: contain;
-    border-radius: 10px;
-    margin: 0;
-    align-self: center;
-
-    ${({ theme }) =>
-      theme === 'light' ? 'filter: drop-shadow(0px 4px 4px #afafaf);' : ''}
-    transition: 500ms;
-  }
+  ${({ theme }) =>
+    theme === 'light' ? 'filter: drop-shadow(0px 4px 4px #afafaf);' : ''}
+  transition: 500ms;
 `;

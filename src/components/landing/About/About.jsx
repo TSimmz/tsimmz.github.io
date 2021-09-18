@@ -1,12 +1,6 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from 'providers/ThemeProvider';
-import {
-  Wrapper,
-  AboutWrapper,
-  Details,
-  ImageWrapper,
-  AboutDivider,
-} from './styles';
+import { Wrapper, AboutWrapper, Details, Image, AboutDivider } from './styles';
 import { Divider, PageTitle } from 'components/common';
 import about from './about.json';
 import nyc from 'assets/images/nyc.jpg';
@@ -22,9 +16,7 @@ export const About = ({ timeout }) => {
       unmountOnExit>
       <Wrapper theme={theme}>
         <AboutWrapper id='about' theme={theme}>
-          <ImageWrapper theme={theme}>
-            <img src={nyc} alt='times square' />
-          </ImageWrapper>
+          <Image theme={theme} src={nyc} alt='times square' />
           <Divider as={AboutDivider} vertical theme={theme} />
           <Details theme={theme}>
             <PageTitle theme={theme} className='margin-bottom'>
