@@ -63,6 +63,7 @@ export const StyledLink = styled(Link)`
     activePage &&
     theme === 'light' &&
     `
+		color: ${lightTheme.darkColor};
 		border-bottom: 2px solid ${lightTheme.accent};
 		transform: scale(1.1);
 		`}
@@ -71,6 +72,7 @@ export const StyledLink = styled(Link)`
     activePage &&
     theme !== 'light' &&
     `
+		color: ${darkTheme.darkColor};
 		border-bottom: 2px solid ${darkTheme.accent};
 		transform: scale(1.1);
 		`}
