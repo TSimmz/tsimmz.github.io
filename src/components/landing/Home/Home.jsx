@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from 'providers/ThemeProvider';
-import { Wrapper, HeroWrapper, Divider, CTA } from './styles';
-import { Button } from 'components/common';
+import { Wrapper, HeroWrapper, CTA } from './styles';
+import { Button, Divider } from 'components/common';
 import { Link } from 'react-router-dom';
 import { Fade } from '@material-ui/core/';
 
@@ -16,7 +16,7 @@ export const Home = ({ timeout }) => {
       <Wrapper theme={theme}>
         <HeroWrapper id='home' theme={theme}>
           <h1>Tyler Simoni</h1>
-          <Divider theme={theme} />
+          <Divider horizontal theme={theme} />
           <h4>
             I'm a frontend developer and designer based in the Tampa Bay area.
           </h4>

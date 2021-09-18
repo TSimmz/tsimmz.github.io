@@ -1,12 +1,7 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from 'providers/ThemeProvider';
-import {
-  Wrapper,
-  AboutWrapper,
-  Divider,
-  Details,
-  ImageWrapper,
-} from './styles';
+import { Wrapper, AboutWrapper, Details, ImageWrapper } from './styles';
+import { Divider } from 'components/common';
 import nyc from 'assets/images/nyc.jpg';
 import { Fade } from '@material-ui/core';
 
@@ -23,7 +18,7 @@ export const About = ({ timeout }) => {
           <ImageWrapper theme={theme}>
             <img src={nyc} alt='times square' />
           </ImageWrapper>
-          <Divider theme={theme} />
+          <Divider vertical theme={theme} />
           <Details>
             <h1>About</h1>
             <p>
