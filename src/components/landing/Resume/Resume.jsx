@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from 'providers/ThemeProvider';
 import { Wrapper, ResumeWrapper } from './styles';
-import { Divider } from 'components/common';
+import { Divider, PageTitle } from 'components/common';
 import { Fade } from '@material-ui/core';
 import resume from './resume.json';
 import { Education } from './Education/Education';
@@ -18,7 +18,7 @@ export const Resume = ({ timeout }) => {
       unmountOnExit>
       <Wrapper theme={theme}>
         <ResumeWrapper id='resume' theme={theme}>
-          <h1>Resume</h1>
+          <PageTitle className='center'>Resume</PageTitle>
           <Divider horizontal theme={theme} />
           <Education education={resume.education} theme={theme} />
           <Experience experience={resume.workExperience} theme={theme} />

@@ -28,26 +28,6 @@ export const AboutWrapper = styled.section`
     flex-direction: column;
   }
 
-  h1 {
-    font-size: 144px;
-    letter-spacing: 1.5rem;
-    margin-bottom: 0.5rem;
-
-    color: ${({ theme }) =>
-      theme === 'light' ? lightTheme.darkColor : darkTheme.darkColor};
-    transition: 500ms;
-
-    @media (max-width: 1500px) {
-      font-size: 124px;
-    }
-
-    @media (max-width: 1310px) {
-      font-size: 100px;
-      letter-spacing: 1.3rem;
-      align-self: center;
-    }
-  }
-
   p {
     font-size: 22px;
     font-weight: normal;

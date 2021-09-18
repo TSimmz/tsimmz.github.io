@@ -17,30 +17,6 @@ export const HeroWrapper = styled.section`
   display: flex;
   flex-direction: column;
 
-  h1 {
-    font-size: 144px;
-    letter-spacing: 1.5rem;
-    margin-bottom: 2rem;
-    width: 50vw;
-
-    color: ${({ theme }) =>
-      theme === 'light' ? lightTheme.darkColor : darkTheme.darkColor};
-    transition: 500ms;
-
-    @media (max-width: 2360px) {
-      font-size: 124px;
-      letter-spacing: 1.3rem;
-    }
-
-    @media (max-width: 2035px) {
-      font-size: 104px;
-      letter-spacing: 1.1rem;
-    }
-
-    @media (max-width: 1710) {
-    }
-  }
-
   h4 {
     font-size: 2rem;
     font-weight: normal;

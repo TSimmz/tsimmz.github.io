@@ -19,18 +19,6 @@ export const ContactWrapper = styled.section`
   @media (max-width: 1310px) {
     flex-direction: column;
   }
-
-  h1 {
-    font-size: 96px;
-    letter-spacing: 1.5rem;
-    margin-bottom: 2rem;
-    align-self: center;
-
-    color: ${({ theme }) =>
-      theme === 'light' ? lightTheme.darkColor : darkTheme.darkColor};
-    transition: 500ms;
-    flex: 1;
-  }
 `;
 
 export const FormWrapper = styled.div`

@@ -11,20 +11,10 @@ export const Wrapper = styled.div`
 export const ResumeWrapper = styled.section`
   max-width: 1200px;
   margin: 20px auto;
-  padding: 10px 20px;
+  padding: 10px 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  h1 {
-    width: max-content;
-    font-size: 144px;
-    letter-spacing: 1.5rem;
-    margin: 0 auto;
-    color: ${({ theme }) =>
-      theme === 'light' ? lightTheme.darkColor : darkTheme.darkColor};
-    transition: 500ms;
-  }
 
   h4 {
     margin: 20px auto 30px;
