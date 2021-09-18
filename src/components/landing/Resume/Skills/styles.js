@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   border-radius: 6px;
   margin-bottom: 20px;
-  padding: 0px 20px;
+  padding: 0px 40px;
   background-color: ${({ theme }) =>
     theme === 'light' ? lightTheme.navbarColor : darkTheme.navbarColor};
   ${({ theme }) =>

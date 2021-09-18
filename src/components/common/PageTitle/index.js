@@ -3,9 +3,8 @@ import { lightTheme, darkTheme } from 'providers/ThemeProvider';
 
 export const PageTitle = styled.h1`
   font-size: clamp(4rem, 6vw + 1rem, 9rem);
-  letter-spacing: 1.1vw;
+  letter-spacing: 1.4rem;
   margin: 0;
-  white-space: normal;
 
   color: ${({ theme }) =>
     theme === 'light' ? lightTheme.darkColor : darkTheme.darkColor};

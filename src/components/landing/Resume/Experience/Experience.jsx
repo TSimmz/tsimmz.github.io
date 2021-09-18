@@ -8,7 +8,7 @@ export const Experience = ({ experience, theme }) => {
       <h4>Experience</h4>
       {experience.map(
         ({ company, location, start, end, position, responsibilities }) => (
-          <Job>
+          <Job key={start}>
             <Row italic={false}>
               <p>{company}</p>
               <p>{location}</p>

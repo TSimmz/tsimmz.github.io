@@ -23,21 +23,32 @@ export const ResumeWrapper = styled.section`
     letter-spacing: 1px;
     color: ${({ theme }) =>
       theme === 'light' ? lightTheme.darkColor : darkTheme.darkColor};
+    transition: 500ms;
   }
 
   p {
-    font-size: 22px;
+    font-size: 1.5rem;
     margin-bottom: 0.5rem;
     color: ${({ theme }) =>
       theme === 'light' ? lightTheme.darkColor : darkTheme.darkColor};
+    transition: 500ms;
+
+    @media (max-width: 770px) {
+      font-size: 1.1rem;
+    }
+  }
+
+  ul {
+    margin-top: 1rem;
   }
 
   li {
-    list-style: square;
+    font-size: 1.2rem;
     margin-left: 50px;
     margin-bottom: 20px;
     color: ${({ theme }) =>
       theme === 'light' ? lightTheme.darkColor : darkTheme.darkColor};
+    transition: 500ms;
   }
 `;
 
@@ -58,6 +69,6 @@ export const Column = styled.div`
 export const Row = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.3rem;
   font-style: ${({ italic }) => (italic ? 'italic' : 'normal')};
 `;
