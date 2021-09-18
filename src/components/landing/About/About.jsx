@@ -1,6 +1,12 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from 'providers/ThemeProvider';
-import { Wrapper, AboutWrapper, Details, ImageWrapper } from './styles';
+import {
+  Wrapper,
+  AboutWrapper,
+  Details,
+  ImageWrapper,
+  AboutDivider,
+} from './styles';
 import { Divider, PageTitle } from 'components/common';
 import about from './about.json';
 import nyc from 'assets/images/nyc.jpg';
@@ -19,11 +25,11 @@ export const About = ({ timeout }) => {
           <ImageWrapper theme={theme}>
             <img src={nyc} alt='times square' />
           </ImageWrapper>
-          <Divider vertical theme={theme} />
+          <Divider as={AboutDivider} vertical theme={theme} />
           <Details>
             <PageTitle className='margin-bottom'>About</PageTitle>
             {about.details.map((paragraph) => (
-              <p>{paragraph}</p>
+              <p key={paragraph.slice(0, 10)}>{paragraph}</p>
             ))}
           </Details>
         </AboutWrapper>
@@ -31,7 +37,3 @@ export const About = ({ timeout }) => {
     </Fade>
   );
 };
-
-// <CarouselWrapper>
-//             <Carousel />
-//           </CarouselWrapper>

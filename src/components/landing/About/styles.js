@@ -4,44 +4,49 @@ import { lightTheme, darkTheme } from 'providers/ThemeProvider';
 // Add background-images to this
 export const Wrapper = styled.div`
   width: 100%;
-  height: 90vh;
+  height: 85vh;
   margin: 92px 0px;
   display: flex;
   align-items: center;
-
-  @media (max-width: 1310px) {
-    height: 80vh;
-    margin: 122px 0px;
-  }
 `;
 
 export const AboutWrapper = styled.section`
-  max-width: 1280px;
+  max-width: 55vw;
+  height: 55vh;
   margin: 0 auto;
   padding: 0 20px;
-  display: grid;
-  grid-template-areas: 'image divide text';
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
 
   @media (max-width: 1310px) {
-    grid-template-areas:
-      'image'
-      'divide'
-      'text';
-    justify-content: center;
+    flex-direction: column;
+    justify-items: center;
+  }
+`;
 
-    align-items: center;
+export const AboutDivider = styled.div`
+  @media (max-width: 1310px) {
+    height: 0;
+    width: 100%;
+    margin: 20px 0;
   }
 `;
 
 export const Details = styled.div`
-  grid-area: 'text';
+  flex-shrink: 10;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
 
+  @media (max-width: 1310px) {
+    align-items: center;
+  }
+
   p {
-    font-size: 22px;
-    font-weight: normal;
+    font-size: 1.2rem;
     color: ${({ theme }) =>
       theme === 'light' ? lightTheme.darkColor : darkTheme.darkColor};
     transition: 500ms;
@@ -49,13 +54,22 @@ export const Details = styled.div`
 `;
 
 export const ImageWrapper = styled.div`
-  grid-area: 'image';
-  width: 22vw;
+  display: flex;
+  flex-basis: 500px;
+  flex-shrink: 0;
+  padding: 10px;
+
+  @media (max-width: 1310px) {
+    width: 70%;
+  }
 
   img {
     display: block;
     max-width: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    border-radius: 10px;
+    margin: 0;
+    align-self: center;
 
     ${({ theme }) =>
       theme === 'light' ? 'filter: drop-shadow(0px 4px 4px #afafaf);' : ''}

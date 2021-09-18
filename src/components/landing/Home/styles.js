@@ -11,9 +11,10 @@ export const Wrapper = styled.div`
 `;
 
 export const HeroWrapper = styled.section`
-  max-width: 50vw;
+  max-width: 55vw;
   margin: 0 auto;
   padding: 0 20px;
+
   display: flex;
   flex-direction: column;
 
