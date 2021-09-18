@@ -1,20 +1,47 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
 import { ThemeContext } from 'providers/ThemeProvider';
 import SocialIcons from '../SocialIcons/SocialIcons';
 import ToggleTheme from '../ToggleTheme/ToggleTheme';
-import { Wrapper } from './styles';
+import { Wrapper, StyledLink } from './styles';
 
-const NavbarLinks = ({ desktop }) => {
+const NavbarLinks = ({ desktop, activePage, setActivePage }) => {
   const { theme } = useContext(ThemeContext);
+
+  const handlePageChange = (page) => {
+    setActivePage(page);
+  };
+
   return (
     <Wrapper theme={theme} desktop={desktop}>
       <ToggleTheme />
-      <Link to='/'>Home</Link>
-      <Link to='/about'>About</Link>
-      <Link to='/resume'>Resume</Link>
-
-      <Link to='/contact'>Contact</Link>
+      <StyledLink
+        to='/'
+        theme={theme}
+        activePage={activePage === 'home'}
+        onClick={() => handlePageChange('home')}>
+        Home
+      </StyledLink>
+      <StyledLink
+        to='/about'
+        theme={theme}
+        activePage={activePage === 'about'}
+        onClick={() => handlePageChange('about')}>
+        About
+      </StyledLink>
+      <StyledLink
+        to='/resume'
+        theme={theme}
+        activePage={activePage === 'resume'}
+        onClick={() => handlePageChange('resume')}>
+        Resume
+      </StyledLink>
+      <StyledLink
+        to='/contact'
+        theme={theme}
+        activePage={activePage === 'contact'}
+        onClick={() => handlePageChange('contact')}>
+        Contact
+      </StyledLink>
       <SocialIcons />
     </Wrapper>
   );

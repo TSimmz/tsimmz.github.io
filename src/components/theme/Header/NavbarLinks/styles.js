@@ -1,26 +1,9 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { lightTheme, darkTheme } from 'providers/ThemeProvider';
 
 export const Wrapper = styled.div`
   width: 100%;
-
-  > a {
-    color: ${({ theme }) =>
-      theme === 'light' ? lightTheme.lightColor : darkTheme.lightColor};
-    transition: 500ms;
-    text-decoration: none;
-
-    @media (max-width: 960px) {
-      color: ${({ theme }) =>
-        theme === 'light' ? lightTheme.lightColor : darkTheme.lightColor};
-    }
-
-    &:hover {
-      color: ${({ theme }) =>
-        theme === 'light' ? lightTheme.darkColor : darkTheme.hover};
-      transform: scale(1.1);
-    }
-  }
 
   ${({ desktop }) =>
     desktop
@@ -61,4 +44,34 @@ export const Wrapper = styled.div`
 					}
 			}
 	`}
+`;
+
+export const StyledLink = styled(Link)`
+  padding-bottom: 0.2rem;
+  color: ${({ theme }) =>
+    theme === 'light' ? lightTheme.lightColor : darkTheme.lightColor};
+  transition: 500ms;
+  text-decoration: none;
+
+  &:hover {
+    color: ${({ theme }) =>
+      theme === 'light' ? lightTheme.darkColor : darkTheme.hover};
+    transform: scale(1.1);
+  }
+
+  ${({ activePage, theme }) =>
+    activePage &&
+    theme === 'light' &&
+    `
+		border-bottom: 2px solid ${lightTheme.accent};
+		transform: scale(1.1);
+		`}
+
+  ${({ activePage, theme }) =>
+    activePage &&
+    theme !== 'light' &&
+    `
+		border-bottom: 2px solid ${darkTheme.accent};
+		transform: scale(1.1);
+		`}
 `;
