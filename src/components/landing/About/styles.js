@@ -16,17 +16,28 @@ export const Wrapper = styled.div`
 `;
 
 export const AboutWrapper = styled.section`
-  max-width: 1920px;
-  height: 55vh;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 0 20px;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-areas: 'image divide text';
   align-items: center;
 
   @media (max-width: 1310px) {
-    flex-direction: column;
+    grid-template-areas:
+      'image'
+      'divide'
+      'text';
+    justify-content: center;
+
+    align-items: center;
   }
+`;
+
+export const Details = styled.div`
+  grid-area: 'text';
+  display: flex;
+  flex-direction: column;
 
   p {
     font-size: 22px;
@@ -34,42 +45,20 @@ export const AboutWrapper = styled.section`
     color: ${({ theme }) =>
       theme === 'light' ? lightTheme.darkColor : darkTheme.darkColor};
     transition: 500ms;
-
-    @media (max-width: 1500px) {
-      font-size: 20px;
-    }
   }
-`;
-
-export const CarouselWrapper = styled.div`
-  width: 650px;
-  transform: translateX(125px);
-`;
-
-export const Details = styled.div`
-  flex-shrink: 1;
-  max-width: 660px;
-  display: flex;
-  flex-direction: column;
 `;
 
 export const ImageWrapper = styled.div`
-  height: 50vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  @media (max-width: 1310px) {
-    height: 30vh;
-    margin-bottom: 40px;
-  }
+  grid-area: 'image';
+  width: 22vw;
 
   img {
-    height: inherit;
-    margin: 0 auto;
+    display: block;
+    max-width: 100%;
     object-fit: cover;
 
     ${({ theme }) =>
       theme === 'light' ? 'filter: drop-shadow(0px 4px 4px #afafaf);' : ''}
+    transition: 500ms;
   }
 `;
